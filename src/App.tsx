@@ -20,12 +20,12 @@ function App() {
 					<main className="d-flex">
 						<NavPanel />
 						<section className="content container-fluid mx-5 my-2 py-4">
-							<IndexPage />
-						</section>
             <Routes>
               <Route path="/" element={<IndexPage />}/> 
               <Route path="/vendors" element={<VendorsPage />}/> 
             </Routes>
+						</section>
+            
 					</main>
 					<section className="container-fluid justify-content-between d-flex bg-light pe-4 ps-4 pt-1 fw-bolder"></section>
 				</div>

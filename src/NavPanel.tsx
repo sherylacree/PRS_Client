@@ -1,4 +1,5 @@
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
+import { Link } from "react-router-dom";
 
 function NavPanel(){
 return (
@@ -56,10 +57,8 @@ return (
             </a>
         </li>
         <li className="nav-item pt-4">
-            <a
-                className="text-decoration-none"
-                href="vendors.html">
-                <svg
+        <Link to="/vendors" className="nav-item pt-4">
+              <svg
                     className="bi me-2"
                     width={25}
                     height={25}
@@ -69,7 +68,7 @@ return (
                     />
                 </svg>
                 Vendors
-            </a>
+            </Link>
         </li>
         <li className="nav-item pt-4">
             <a

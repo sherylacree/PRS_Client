@@ -36,7 +36,10 @@ a {
   width: 100%;
   z-index: 1;
 }
-
+.card{
+  width: 18rem;
+  
+}
 .list .card:hover {
   background-color: var(--bs-tertiary-bg);
   transform: scale(1.025);
