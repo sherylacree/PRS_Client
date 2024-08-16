@@ -4,7 +4,7 @@ function VendorsCreate() {
 	return (
 		<>
 			<nav className="d-flex justify-content-between"></nav>
-			<h4> Create New Vendor Entry</h4>
+			<h4> Create New Vendor </h4>
 
 			<VendorForm />
 		</>

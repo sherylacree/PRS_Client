@@ -10,6 +10,9 @@ import NavPanel from "./NavPanel";
 import Header from "./Header";
 import IndexPage from "./IndexPage";
 import VendorsPage from "./vendors/VendorsPage";
+import VendorList from "./vendors/VendorList";
+import VendorsCreate from "./vendors/VendorsCreate";
+import VendorsEdit from "./vendors/VendorsEdit";
 
 function App() {
 	return (
@@ -23,6 +26,10 @@ function App() {
             <Routes>
               <Route path="/" element={<IndexPage />}/> 
               <Route path="/vendors" element={<VendorsPage />}/> 
+			  <Route path="/vendors" element={<VendorList />}/> 
+			  <Route path="/vendors/create" element={<VendorsCreate />}/> 			
+			  <Route path="/vendors/edit" element={<VendorsEdit />}/> 
+			  
             </Routes>
 						</section>
             
@@ -33,5 +40,4 @@ function App() {
 		</BrowserRouter>
 	);
 }
-
 export default App;

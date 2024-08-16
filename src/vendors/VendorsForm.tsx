@@ -84,7 +84,6 @@ function VendorForm() {
 						errors.address && "is-invalid"
 					} `}
 					type="text"
-					autoFocus
 				/>
 				<div className="invalid-feedback">
 					{errors?.address?.message}
@@ -105,7 +104,6 @@ function VendorForm() {
 						errors.city && "is-invalid"
 					} `}
 					type="text"
-					autoFocus
 				/>
 				<div className="invalid-feedback">
 					{errors?.city?.message}
@@ -268,7 +266,6 @@ function VendorForm() {
 						errors.zipCode && "is-invalid"
 					} `}
 					type="text"
-					autoFocus
 				/>
 				<div className="invalid-feedback">
 					{errors?.zipCode?.message}
@@ -291,7 +288,6 @@ function VendorForm() {
 						errors.phone && "is-invalid"
 					} `}
 					type="text"
-					autoFocus
 				/>
 				<div className="invalid-feedback">
 					{errors?.phone?.message}
@@ -314,54 +310,16 @@ function VendorForm() {
 						errors.email && "is-invalid"
 					} `}
 					type="text"
-					autoFocus
 				/>
 				<div className="invalid-feedback">
 					{errors?.email?.message}
 				</div>
 			</div>
-			{/* <label className="form-label" htmlFor="rating">
-          Rating
-        </label>
-        <input
-          {...register("rating", {
-            valueAsNumber: true,
-            minLength: { value: 1, message: "1 is the lowest rating" },
-            maxLength: { value: 10, message: "10 is the highest rating" },
-          })}
-          className={`form-control ${errors.rating && "is-invalid"} `}
-          type="number"
-          id="rating"
-          min="1.0"
-          max="10.0"
-          step=".1"
-        />
-        <div className="invalid-feedback">{errors.rating?.message}</div>
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label" htmlFor="director">
-          Director
-        </label>
-        <input {...register("director")} className="form-control" type="text" id="director" />
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label" htmlFor="budgetInMillions">
-          Budget
-        </label>
-        <input
-          {...register("budgetInMillions", { valueAsNumber: true })}
-          className="form-control"
-          type="number"
-          id="budgetInMillions"
-          step="1"
-        />
-        <div className="form-text">Budget numbers are entered in millions</div>
-      </div> */}
 
 			<div className="d-flex gap-2">
-				<button className="btn btn-outline-primary">
+				<button
+					type="submit"
+					className="btn btn-outline-primary">
 					Save
 				</button>
 				<Link
