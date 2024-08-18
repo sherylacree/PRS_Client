@@ -1,15 +1,13 @@
-import VendorForm from "./VendorsForm"
-
+import VendorForm from "./VendorsForm";
 
 function VendorsEdit() {
-  return (
-  
-    <div className="d-flex w-50 m-2">
-<h3> Edit Vendor </h3>
-   <VendorForm/>
-    </div>
-    
-  )
+	return (
+		<>
+			<h3> Edit Vendor </h3>
+      <hr />
+			<VendorForm />
+		</>
+	);
 }
 
-export default VendorsEdit
+export default VendorsEdit;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Vendor } from "./vendor";
+import { Vendor } from "./Vendor";
 import { vendorAPI } from "./VendorAPI";
 import toast from "react-hot-toast";
 import VendorCard from "./VendorCard";
@@ -18,15 +18,22 @@ function VendorList() {
 		loadVendors();
 	}, []);
 
-	async function remove(vendor:Vendor) {
-		if (confirm("Are you sure you want to delete this Movie?")) {
+	async function remove(vendor: Vendor) {
+		if (
+			confirm(
+				"Are you sure you want to delete this Vendor?"
+			)
+		) {
 			if (vendor.id) {
-			  await vendorAPI.delete(vendor.id);
-			  let updatedVendors = vendors.filter((v) => v.id !== vendor.id);
-			  setVendors(updatedVendors);
-			  toast.success("Successfully deleted.");
+				await vendorAPI.delete(vendor.id);
+				let updatedVendors = vendors.filter(
+					(v) => v.id !== vendor.id
+				);
+				setVendors(updatedVendors);
+				toast.success("Successfully deleted.");
+			}
+		}
 	}
-}}
 
 	return (
 		<section className="d-flex flex-wrap gap-4">
@@ -42,12 +49,14 @@ function VendorList() {
 				</div>
 			)}
 
-			
-		
-				{vendors.map((vendor) => (
-				<VendorCard key={vendor.id} vendor={vendor} onRemove={remove}/>
+			{vendors.map((vendor) => (
+				<VendorCard
+					key={vendor.id}
+					vendor={vendor}
+					onRemove={remove}
+				/>
 			))}
 		</section>
 	);
 }
-export default VendorList
+export default VendorList;

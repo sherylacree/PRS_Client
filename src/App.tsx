@@ -13,6 +13,9 @@ import VendorsPage from "./vendors/VendorsPage";
 import VendorList from "./vendors/VendorList";
 import VendorsCreate from "./vendors/VendorsCreate";
 import VendorsEdit from "./vendors/VendorsEdit";
+import UserPage from "./users/UserPage";
+import UserList from "./users/UserList";
+import UserCreate from "./users/UserCreate";
 
 function App() {
 	return (
@@ -28,7 +31,10 @@ function App() {
               <Route path="/vendors" element={<VendorsPage />}/> 
 			  <Route path="/vendors" element={<VendorList />}/> 
 			  <Route path="/vendors/create" element={<VendorsCreate />}/> 			
-			  <Route path="/vendors/edit" element={<VendorsEdit />}/> 
+			  <Route path="/vendors/edit/:id" element={<VendorsEdit />}/> 
+			  <Route path="/users" element={<UserPage />}/>
+			  <Route path="/users/create" element={<UserCreate />}/>
+			  <Route path="/users" element={<UserList />}/>
 			  
             </Routes>
 						</section>

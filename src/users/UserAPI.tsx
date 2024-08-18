@@ -4,28 +4,28 @@ import {
 	delay,
 	parseJSON,
 } from "../utility/fetchUtilities";
-import { Vendor } from "./Vendor";
+import { User } from "./User";
 
-let url = `${BASE_URL}/vendors`;
+let url = `${BASE_URL}/users`;
 
-export const vendorAPI = {
-	list(): Promise<Vendor[]> {
+export const userAPI = {
+	list(): Promise<User[]> {
 		return fetch(`${url}?_sort=name&_order=asc`)
 			.then(delay(600))
 			.then(checkStatus)
 			.then(parseJSON);
 	},
 
-	find(id: number): Promise<Vendor> {
+	find(id: number): Promise<User> {
 		return fetch(`${url}/${id}`)
 			.then(checkStatus)
 			.then(parseJSON);
 	},
 
-	post(vendor: Vendor) {
+	post(user: User) {
 		return fetch(`${url}`, {
 			method: "POST",
-			body: JSON.stringify(vendor),
+			body: JSON.stringify(user),
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -34,10 +34,10 @@ export const vendorAPI = {
 			.then(parseJSON);
 	},
 
-	put(vendor: Vendor) {
-		return fetch(`${url}/${vendor.id}`, {
+	put(user: User) {
+		return fetch(`${url}/${user.id}`, {
 			method: "PUT",
-			body: JSON.stringify(vendor),
+			body: JSON.stringify(user),
 			headers: {
 				"Content-Type": "application/json",
 			},

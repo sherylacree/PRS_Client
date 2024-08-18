@@ -4,7 +4,7 @@ import {
 	useNavigate,
 	useParams,
 } from "react-router-dom";
-import { Vendor } from "./vendor";
+import { Vendor } from "./Vendor";
 import toast from "react-hot-toast";
 import { vendorAPI } from "./VendorAPI";
 
@@ -50,7 +50,7 @@ function VendorForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="title">
+					htmlFor="name">
 					Vendor Name
 				</label>
 				<input
@@ -72,12 +72,12 @@ function VendorForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="title">
+					htmlFor="address">
 					Address
 				</label>
 				<input
 					id="address"
-					{...register("name", {
+					{...register("address", {
 						required: "Address is required",
 					})}
 					className={`form-control ${
@@ -92,11 +92,11 @@ function VendorForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="title">
+					htmlFor="city">
 					City
 				</label>
 				<input
-					id="name"
+					id="city"
 					{...register("city", {
 						required: "City is required",
 					})}
@@ -112,7 +112,7 @@ function VendorForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="genre">
+					htmlFor="state">
 					State
 				</label>
 				<select
@@ -254,7 +254,7 @@ function VendorForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="title">
+					htmlFor="zipCode">
 					Zip Code
 				</label>
 				<input
@@ -297,7 +297,7 @@ function VendorForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="title">
+					htmlFor="email">
 					Email
 				</label>
 				<input
