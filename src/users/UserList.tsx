@@ -4,9 +4,8 @@ import { User } from "./User";
 import { userAPI } from "./UserAPI";
 import UserCard from "./UserCard";
 
-
 function UserList() {
-  const [users, setUsers] = useState<User[]>([]);
+	const [users, setUsers] = useState<User[]>([]);
 	const [busy, setBusy] = useState(false);
 
 	async function loadUsers() {
@@ -27,35 +26,34 @@ function UserList() {
 		) {
 			if (user.id) {
 				await userAPI.delete(user.id);
-				let updatedUsers = user.filter(
-					(u: { id: number | undefined; }) => u.id !== user.id
+				let updatedUsers = users.filter(
+					(u) => u.id !== user.id
 				);
-				setVendors(updatedUsers);
+				setUsers(updatedUsers);
 				toast.success("Successfully deleted.");
 			}
 		}
 	}
 
-return (
-  <section className="d-flex flex-wrap gap-0">
-{busy && (
-  <div className="d-flex justify-content-evenly align-align-items-center w-100 vh-100">
-<div className="spinner-border" role="status">
-  <span> Loading . . . {""}</span>
-
-</div>
-  </div>
-)}
-{users.map((user)=> (
-  
-    <UserCard key={user.id} user={user} onRemove={remove}
-  />
-))}
-  </section>
-)
+	return (
+		<section className="d-flex flex-wrap gap-0">
+			{busy && (
+				<div className="d-flex justify-content-evenly align-align-items-center w-100 vh-100">
+					<div
+						className="spinner-border"
+						role="status">
+						<span className="visually-hidden"> Loading . . . {""}</span>
+					</div>
+				</div>
+			)}
+			{users.map((user) => (
+				<UserCard
+					key={user.id}
+					user={user}
+					onRemove={remove}
+				/>
+			))}
+		</section>
+	);
+}
 export default UserList;
-
-  function setVendors(updatedUsers: void) {
-    throw new Error("Function not implemented.");
-  }
- 

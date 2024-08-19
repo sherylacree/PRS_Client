@@ -1,8 +1,6 @@
 
 export class User {
- 
-    
-	id: number | undefined;
+	id: number | undefined; 
 	username = "";
 	password = "";
 	firstname = "";

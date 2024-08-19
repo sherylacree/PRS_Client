@@ -50,7 +50,7 @@ function UserForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="password">
+					htmlFor="username">
 					Username
 				</label>
 				<input
@@ -74,7 +74,7 @@ function UserForm() {
 				<label
 					className="form-label"
 					htmlFor="password">
-					Address
+					Password
 				</label>
 				<input
 					id="password"
@@ -93,21 +93,21 @@ function UserForm() {
 			<div className="mb-3">
 				<label
 					className="form-label"
-					htmlFor="password">
+					htmlFor="firstname">
 					Password
 				</label>
 				<input
-					id="password"
-					{...register("password", {
-						required: "Password is required",
+					id="firstname"
+					{...register("firstname", {
+						required: "Your first name is required",
 					})}
 					className={`form-control ${
-						errors.password && "is-invalid"
+						errors.firstname && "is-invalid"
 					} `}
 					type="text"
 				/>
 				<div className="invalid-feedback">
-					{errors?.password?.message}
+					{errors?.firstname?.message}
 				</div>
 			</div>
 			<div className="mb-3">
@@ -192,8 +192,6 @@ function UserForm() {
 					{errors?.email?.message}
 				</div>
 			</div>
-
-		
 			<div>
 				<input
 					type="checkbox"
@@ -219,7 +217,7 @@ function UserForm() {
 				</button>
 				<Link
 					className="btn btn-outline-secondary"
-					to={"/vendors"}>
+					to={"/users"}>
 					Cancel
 				</Link>
 			</div>

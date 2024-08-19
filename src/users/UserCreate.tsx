@@ -1,9 +1,10 @@
+import UserForm from "./UsersForm"
 
 
 function UserCreate() {
   return (
     <div>
-      
+      <UserForm/>
     </div>
   )
 }
