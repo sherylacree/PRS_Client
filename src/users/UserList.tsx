@@ -1,3 +1,8 @@
+import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+import { User } from "./User";
+import { userAPI } from "./UserAPI";
+import UserCard from "./UserCard";
 
 
 function UserList() {
@@ -11,7 +16,7 @@ function UserList() {
 		setBusy(false);
 	}
 	useEffect(() => {
-		loadUser();
+		loadUsers();
 	}, []);
 
 	async function remove(user: User) {
@@ -23,7 +28,7 @@ function UserList() {
 			if (user.id) {
 				await userAPI.delete(user.id);
 				let updatedUsers = user.filter(
-					(u) => u.id !== user.id
+					(u: { id: number | undefined; }) => u.id !== user.id
 				);
 				setVendors(updatedUsers);
 				toast.success("Successfully deleted.");
@@ -31,5 +36,26 @@ function UserList() {
 		}
 	}
 
+return (
+  <section className="d-flex flex-wrap gap-0">
+{busy && (
+  <div className="d-flex justify-content-evenly align-align-items-center w-100 vh-100">
+<div className="spinner-border" role="status">
+  <span> Loading . . . {""}</span>
 
-export default UserList
+</div>
+  </div>
+)}
+{users.map((user)=> (
+  
+    <UserCard key={user.id} user={user} onRemove={remove}
+  />
+))}
+  </section>
+)
+export default UserList;
+
+  function setVendors(updatedUsers: void) {
+    throw new Error("Function not implemented.");
+  }
+ 
