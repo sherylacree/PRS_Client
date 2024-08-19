@@ -17,6 +17,12 @@ import UserPage from "./users/UsersPage";
 import UserList from "./users/UserList";
 import UserCreate from "./users/UserCreate";
 import UsersEdit from "./users/UsersEdit";
+import ProductsCreate from "./products/ProductsCreate";
+import ProductsEdit from "./products/ProductsEdit";
+import ProductList from "./products/ProductList";
+import ProductsPage from "./products/ProductsPage";
+
+
 
 function App() {
 	return (
@@ -70,6 +76,29 @@ function App() {
 								<Route
 									path="/users/edit/:id"
 									element={<UsersEdit />}
+								/>
+								<Route
+									path="/products"
+									element={
+										<ProductsPage />
+									}
+								/>
+								<Route
+									path="/products"
+									element={<ProductList />}
+								/>
+								<Route
+									path="/products/create"
+									element={
+										<ProductsCreate />
+									}
+								/>
+								<Route
+									path="/products/edit/:id"
+									
+									element={
+										<ProductsEdit />
+									}
 								/>
 							</Routes>
 						</section>

@@ -1,12 +1,12 @@
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function NavPanel() {
 	return (
 		<nav
 			className="bg-light px-4 mh-100 justify-content-center pt-4"
 			style={{ width: "15rem" }}>
-			<ul className="d-flex flex-column align-content-left w-100 list-inline">
+			<ul className=" nav d-flex flex-column align-content-left w-100 list-inline">
 				<a
 					className="text-decoration-none"
 					href="newrequests.html">
@@ -25,8 +25,8 @@ function NavPanel() {
 					Purchase
 				</li>
 				<li className="nav-item pt-4 pb-2">
-					<Link
-						className="text-decoration-none"
+					<NavLink
+						className="nav-link"
 						to="/requests">
 						<svg
 							className="bi me-2"
@@ -38,11 +38,11 @@ function NavPanel() {
 							/>
 						</svg>
 						Request
-					</Link>
+					</NavLink>
 				</li>
 				<li className="nav-item pt-4">
-					<Link
-						className="text-decoration-none"
+					<NavLink
+						className="nav-link"
 						to="/products">
 						<svg
 							className="bi me-2"
@@ -54,12 +54,12 @@ function NavPanel() {
 							/>
 						</svg>
 						Products
-					</Link>
+					</NavLink>
 				</li>
 				<li className="nav-item pt-4">
-					<Link
+					<NavLink
 						to="/vendors"
-						className="nav-item pt-4">
+						className="nav-link pt-4">
 						<svg
 							className="bi me-2"
 							width={25}
@@ -70,11 +70,11 @@ function NavPanel() {
 							/>
 						</svg>
 						Vendors
-					</Link>
+					</NavLink>
 				</li>
 				<li className="nav-item pt-4">
-					<Link
-						className="text-decoration-none"
+					<NavLink
+						className="nav-link"
 						to="/users">
 						<svg
 							className="bi me-2"
@@ -86,7 +86,7 @@ function NavPanel() {
 							/>
 						</svg>
 						Users
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 		</nav>

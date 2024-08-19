@@ -3,9 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import { SyntheticEvent } from "react";
 import { NavLink } from "react-router-dom";
-import { Dropdown} from "react-bootstrap";
-
-
+import { Dropdown } from "react-bootstrap";
 
 interface UserCardProps {
 	user: User;
