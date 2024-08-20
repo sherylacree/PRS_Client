@@ -1,3 +1,5 @@
+import { Vendor } from "../vendors/Vendor";
+
 export class Product {
 	id: number | undefined = undefined;
 	partNbr = "";
@@ -5,6 +7,7 @@ export class Product {
 	price = "";
 	unit = "";
 	vendorId : number | undefined;
+vendor: Vendor | undefined;
 
 	get isNew(): boolean {
 		return this.id === undefined;
@@ -18,5 +21,7 @@ export class Product {
 		if (initializer.price) this.price = initializer.price;
 		if (initializer.unit) this.unit = initializer.unit;
 		if (initializer.vendorId) this.vendorId = initializer.vendorId;
+		if (initializer.vendor) this.vendor = initializer.vendor;
+
 	}
 }

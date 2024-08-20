@@ -17,7 +17,7 @@ function ProductForm() {
 	const navigate = useNavigate();
 	const { id } = useParams<{ id: string }>();
 	const productId = Number(id);
-	const [vendor, setVendor] = useState<Vendor[]>([]);
+	const [vendors, setVendors] = useState<Vendor[]>([]);
 
 	const {
 		register,
@@ -26,7 +26,7 @@ function ProductForm() {
 	} = useForm<Product>({
 		defaultValues: async () => {
 			let vendorList = await vendorAPI.list();
-			setVendor(vendorList);
+			setVendors(vendorList);
 
 			if (!productId) {
 				return Promise.resolve(new Product());
@@ -137,12 +137,12 @@ function ProductForm() {
 			<div className="mb-3 mx-2 w-25">
 				<label
 					className="form-label"
-					htmlFor="name">
+					htmlFor="unit">
 					Unit
 				</label>
 				<input
-					id="name"
-					{...register("name", {
+					id="unit"
+					{...register("unit", {
 						required: "Unit is required",
 					})}
 					className={`form-control ${
@@ -172,7 +172,7 @@ function ProductForm() {
 					} `}
 					>
 					<option value="">Select...</option>
-					{vendor.map((vendor) => (
+					{vendors.map((vendor) => (
 						<option
 							key={vendor.id}
 							value={vendor.id}>
@@ -207,7 +207,7 @@ function ProductForm() {
 					Cancel
 				</Link>
 				<button
-					type="submit"
+					
 					className="btn btn-primary">
 					<svg
 						className="bi me-2"
