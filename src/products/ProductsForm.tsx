@@ -56,7 +56,7 @@ function ProductForm() {
 			className="w-100"
 			onSubmit={handleSubmit(save)}
 			noValidate>
-			<div className="w-100">
+			<div className=" d-flex w-100">
 				<div className="mb-3 mx-2 w-25">
 					<label
 						className="form-label"
@@ -106,7 +106,11 @@ function ProductForm() {
 				</div>
 			</div>
 
-			<div className="mb-3 mx-2 w-25">
+			<div className="w-100 d-flex">
+
+
+
+			<div className="mb-3 ms-2 w-25">
 				<label
 					className="form-label"
 					htmlFor="price">
@@ -153,22 +157,22 @@ function ProductForm() {
 				</div>
 			</div>
 
-			<div className="mb-3">
+			<div className="mb-3 me-2 w-50">
 				<label
 					className="form-label"
 					htmlFor="vendor">
 					Vendor
 				</label>
-				<select
+				<select id="vendor"
 					{...register("vendorId", {
 						required: "Vendor is required",
 					})}
 					className={`form-select ${
 						errors.vendorId && "is-invalid"
 					} `}
-					id="vendor">
+					>
 					<option value="">Select...</option>
-					{vendors.map((vendor) => (
+					{vendor.map((vendor) => (
 						<option
 							key={vendor.id}
 							value={vendor.id}>
@@ -180,6 +184,13 @@ function ProductForm() {
 					{errors?.vendorId?.message}
 				</div>
 			</div>
+			</div>
+			
+
+			
+			
+			
+			
 			<div className="d-flex gap-2 justify-content-end">
 				<Link
 					className="btn btn-outline-primary"

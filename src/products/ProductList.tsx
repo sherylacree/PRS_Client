@@ -27,7 +27,7 @@ function ProductList() {
 			if (product.id) {
 				await productAPI.delete(product.id);
 				let updatedProducts = products.filter(
-					(v) => v.id !== product.id
+					(p) => p.id !== product.id
 				);
 				setProducts(updatedProducts);
 				toast.success("Successfully deleted.");
@@ -36,7 +36,7 @@ function ProductList() {
 	}
 
 	return (
-		<section className="d-flex flex-wrap gap-4">
+		<section className="d-flex flex-wrap gap-4 bg-light">
 			{busy && (
 				<div className="d-flex justify-content-center align-items-center w-100 vh-100">
 					<div

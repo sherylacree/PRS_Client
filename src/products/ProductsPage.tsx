@@ -21,7 +21,7 @@ function ProductsPage() {
 							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}
 						/>
 					</svg>
-					Add Product
+					Create Product
 				</Link>
 			</header>
 			<hr />

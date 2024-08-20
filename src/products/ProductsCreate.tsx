@@ -5,7 +5,7 @@ function ProductsCreate() {
 	return (
 		<>
 		
-			<h4> Create New Vendor </h4>
+			<h3> Create Product </h3>
 			<hr />
 			<ProductForm />
 		</>

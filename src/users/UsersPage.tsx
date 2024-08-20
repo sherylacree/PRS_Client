@@ -13,18 +13,19 @@ function UserPage() {
 			<header className="d-flex justify-content-between">
 				<h3>Users</h3>
 				<Link
-					to={"/users/create"}
+					to={"/vendors/create"}
 					role="button"
-					className="btn btn-outline-secondary">
+					className="btn btn-primary">
 					<svg
 						className="bi me-2"
-						width="15"
-						height="15"
-						fill="current color">
+						width={15}
+						height={15}
+						fill="currentColor">
 						<use
-							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}></use>
-					</svg>{" "}
-					Add User
+							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}
+						/>
+					</svg>
+					Create User
 				</Link>
 			</header>
             <hr />

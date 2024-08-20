@@ -1,10 +1,10 @@
 export class Product {
-	id: number | undefined;
+	id: number | undefined = undefined;
 	partNbr = "";
 	name = "";
 	price = "";
 	unit = "";
-	vendorId = "";
+	vendorId : number | undefined;
 
 	get isNew(): boolean {
 		return this.id === undefined;

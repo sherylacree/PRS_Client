@@ -94,8 +94,7 @@ function App() {
 									}
 								/>
 								<Route
-									path="/products/edit/:id"
-									
+									path="/products/edit/:id"									
 									element={
 										<ProductsEdit />
 									}

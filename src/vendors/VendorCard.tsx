@@ -22,6 +22,7 @@ export default function VendorCard({
 						{vendor.code}
 					</span>
 				</small>
+
 				<small>{vendor.address}</small>
 				<div>
 					<small>{vendor.city}, </small>

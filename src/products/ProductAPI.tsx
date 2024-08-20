@@ -6,7 +6,8 @@ import {
 } from "../utility/fetchUtilities";
 import { Product } from "./Products";
 
-let url = `${BASE_URL}/vendors`;
+let url = `${BASE_URL}/products
+`;
 
 export const productAPI = {
 	list(): Promise<Product[]> {
