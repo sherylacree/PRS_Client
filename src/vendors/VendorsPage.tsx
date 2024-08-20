@@ -10,20 +10,24 @@ function VendorsPage() {
 				<Link
 					to={"/vendors/create"}
 					role="button"
-					className="btn btn-outline-secondary">
+					className="btn btn-primary">
 					<svg
 						className="bi me-2"
-						width="15"
-						height="15"
-						fill="current color">
+						width={15}
+						height={15}
+						fill="currentColor">
 						<use
-							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}></use>
-					</svg>{" "}
-					Add Vendor
+							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}
+						/>
+					</svg>
+					Create Vendor
 				</Link>
 			</header>
             <hr />
+			
             <VendorList/>
+
+		
 		</>
 	);
 }

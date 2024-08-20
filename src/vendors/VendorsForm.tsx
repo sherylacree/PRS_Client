@@ -259,16 +259,16 @@ function VendorForm() {
 				</label>
 				<input
 					id="zipCode"
-					{...register("zipCode", {
+					{...register("zip", {
 						required: "Zip Code is required",
 					})}
 					className={`form-control ${
-						errors.zipCode && "is-invalid"
+						errors.zip && "is-invalid"
 					} `}
 					type="text"
 				/>
 				<div className="invalid-feedback">
-					{errors?.zipCode?.message}
+					{errors?.zip?.message}
 				</div>
 			</div>
 

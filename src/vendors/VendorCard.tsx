@@ -14,15 +14,22 @@ export default function VendorCard({
 	return (
 		<>
 			<div
-				className="card p-4"
+				className="card p-4 bg-light-subtle"
 				key={vendor.id}>
 				<strong>{vendor.name}</strong>
-				<small>{vendor.code}</small>
-				<small>{vendor.id}</small>
+				<small>
+					<span className="badge text-bg-secondary rounded-pill">
+						{vendor.code}
+					</span>
+				</small>
 				<small>{vendor.address}</small>
-				<small>{vendor.city}</small>
-				<small>{vendor.state}</small>
-				<small>{vendor.zipCode}</small>
+				<div>
+					<small>{vendor.city}, </small>
+					<small>
+						{vendor.state} {"  "}
+					</small>
+					<small>{vendor.zip}</small>
+				</div>
 				<small>{vendor.phone}</small>
 				<small>{vendor.email}</small>
 				<div className="d-flex gap-2 mt-2">

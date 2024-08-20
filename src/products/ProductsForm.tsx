@@ -9,12 +9,16 @@ import toast from "react-hot-toast";
 import { productAPI } from "./ProductAPI";
 import { Product } from "./Products";
 import { Vendor } from "../vendors/Vendor";
+import { vendorAPI } from "../vendors/VendorAPI";
+import { useState } from "react";
 
 
 function ProductForm() {
 	const navigate = useNavigate();
-	const { id } = useParams<{ id: string }>();
-	const productId = Number(id);
+	const {id} = useParams<{id:string}>();
+	const productId=Number(id);
+	const[vendor, setVendor] = useState<Vendor[]>([])
+
 
 	const {
 		register,
@@ -22,6 +26,9 @@ function ProductForm() {
 		formState: { errors },
 	} = useForm<Product>({
 		defaultValues: async () => {
+let vendorList = await vendorAPI.list();
+setVendor(vendorList);
+
 			if (!productId) {
 				return Promise.resolve(new Product());
 			} else {
@@ -30,9 +37,7 @@ function ProductForm() {
 		},
 	});
 
-	const save: SubmitHandler<Product> = async (
-		product: Product
-	) => {
+	const save: SubmitHandler<Product> = async (product	) => {
 		try {
 			if (product.isNew) {
 				await productAPI.post(product);
@@ -46,6 +51,7 @@ function ProductForm() {
 	};
 
 	return (
+		
 		<form
 			className="w-50"
 			onSubmit={handleSubmit(save)}

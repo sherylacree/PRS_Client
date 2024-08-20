@@ -5,7 +5,7 @@ export class Vendor {
 	address = "";
 	city = "";
 	state = "";
-	zipCode = "";
+	zip = "";
 	phone = "";
 	email = "";
 
@@ -24,8 +24,8 @@ export class Vendor {
 		if (initializer.city) this.city = initializer.city;
 		if (initializer.state)
 			this.state = initializer.state;
-		if (initializer.zipcode)
-			this.zipCode = initializer.zipCode;
+		if (initializer.zip)
+			this.zip = initializer.zip;
 		if (initializer.phone)
 			this.phone = initializer.phone;
 		if (initializer.email)

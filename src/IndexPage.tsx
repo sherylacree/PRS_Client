@@ -3,12 +3,12 @@ function IndexPage(){
 
         <section className="mt-2 ps-3 flex-fill">
         <div>
-            <h2>
+            <h3>
                 Purchase Request System
-            </h2>
+            </h3>
             <hr />
             <section>
-                <p className="d-flex bg-light gap-5 p-4 rounded-4 text-start-med">
+                <p className="d-flex gap-5 p-4 rounded-4 text-start-med">
                     This application
                     will allow you to
                     make purchase

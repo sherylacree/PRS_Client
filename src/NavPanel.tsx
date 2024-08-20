@@ -59,7 +59,7 @@ function NavPanel() {
 				<li className="nav-item pt-4">
 					<NavLink
 						to="/vendors"
-						className="nav-link pt-4">
+						className="nav-link">
 						<svg
 							className="bi me-2"
 							width={25}
