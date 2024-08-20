@@ -14,7 +14,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 	return (
 		<>
 			<div
-				className="d-flex gap-4 bg-light mx-1"
+				className="d-flex bg-light gap-4 p-4"
 				style={{ width: "25rem" }}>
 				<div
 					style={{
@@ -27,16 +27,18 @@ function UserCard({ user, onRemove }: UserCardProps) {
 				</div>
 				<address>
 					<div className="d-flex">
-						<h5>
+						<strong>
 							{user.firstname} {user.lastname}
-							{/* dropdown here */}
-						</h5>
+						</strong>
 						<Dropdown
-							className=""
+							className="d-inline"
 							aria-expanded="false">
 							<Dropdown.Toggle
 								variant=""
-								className="no-caret">
+								className="no-caret"
+								style={{
+									background: "none",
+								}}>
 								{/* <span className="text-primary fw-semibold "> */}
 								<svg
 									className=" m-2 text-primary no-caret"
@@ -70,31 +72,21 @@ function UserCard({ user, onRemove }: UserCardProps) {
 							</Dropdown.Menu>
 						</Dropdown>
 					</div>
-					<br />
-					<span>
-						<strong>
-							{user.firstname} {user.lastname}
-						</strong>
-					</span>
+					{/* <br /> */}
 
-					<span className="text-secondary">
-						{user.isAdmin && "Admin"}
-					</span>
-					<span className="text-secondary">
-						{" "}
+					<div className="text-secondary">
+						{user.isAdmin && "Admin"}{" "}
 						{user.isAdmin &&
 							user.isReviewer &&
 							"| "}
-					</span>
-					<span className="text-secondary">
-						{user.isReviewer && "Reviwer"}
-					</span>
-					<br />
+						{user.isReviewer && "Reviewer"}
+					</div>
+					{/* <br /> */}
 					<span className="text-secondary">
 						{user.phone}
 					</span>
-					<br />
-					<div className="d-flex justify-content-start"></div>
+					{/* <br />
+					<div className="d-flex justify-content-start"></div> */}
 				</address>
 			</div>
 		</>

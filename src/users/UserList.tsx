@@ -36,7 +36,7 @@ function UserList() {
 	}
 
 	return (
-		<section className="d-flex flex-wrap gap-0">
+		<section className="d-flex flex-wrap gap-2 bg-light">
 			{busy && (
 				<div className="d-flex justify-content-evenly align-align-items-center w-100 vh-100">
 					<div

@@ -4,7 +4,7 @@ function VendorsCreate() {
 	return (
 		<>
 		
-			<h3> Create New Vendor </h3>
+			<h3> New Vendor </h3>
 			<hr />
 			
 			<VendorForm />

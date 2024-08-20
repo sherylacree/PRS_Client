@@ -54,4 +54,6 @@ a {
     rgba(237, 250, 255, 1) 60%
   );
 }
- 
+ .no-caret{
+  background: none!important;
+ }
