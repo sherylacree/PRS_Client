@@ -14,7 +14,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 	return (
 		<>
 			<div
-				className="d-flex gap-4 "
+				className="d-flex gap-4 bg-light mx-1"
 				style={{ width: "25rem" }}>
 				<div
 					style={{

@@ -45,7 +45,7 @@ function UserForm() {
 	return (
 		
 		<form
-			className="w-100 vh-100 bg-light p-4"
+			className="w-100 vh-100 bg-light p-4  "
 			onSubmit={handleSubmit(save)}
 			noValidate>
 			<div className="d-flex flex-row justify-content-start">

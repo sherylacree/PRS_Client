@@ -11,7 +11,7 @@ function UserPage() {
 	return (
 		<>
 			<header className="d-flex justify-content-between">
-				<h4>Users</h4>
+				<h3>Users</h3>
 				<Link
 					to={"/users/create"}
 					role="button"

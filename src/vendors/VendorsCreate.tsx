@@ -4,10 +4,12 @@ function VendorsCreate() {
 	return (
 		<>
 		
-			<h4> Create New Vendor </h4>
+			<h3> Create New Vendor </h3>
 			<hr />
+			
 			<VendorForm />
-		</>
+			
+			</>
 	);
 }
 export default VendorsCreate;

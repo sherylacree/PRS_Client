@@ -14,7 +14,7 @@ export default function VendorCard({
 	return (
 		<>
 			<div
-				className="card p-4 bg-light-subtle"
+				className="card p-4 ms-4 mt-4"
 				key={vendor.id}>
 				<strong>{vendor.name}</strong>
 				<small>
