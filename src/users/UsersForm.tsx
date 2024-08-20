@@ -7,6 +7,7 @@ import {
 import { User } from "./User";
 import toast from "react-hot-toast";
 import { userAPI } from "./UserAPI";
+import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 
 function UserForm() {
 	const navigate = useNavigate();
@@ -48,8 +49,8 @@ function UserForm() {
 			className="w-100 vh-100 bg-light p-4  "
 			onSubmit={handleSubmit(save)}
 			noValidate>
-			<div className="d-flex flex-row justify-content-start">
-				<div className="mb-3 mx-2">
+			<div className="d-flex flex-row justify-content-start w-100">
+				<div className="mb-3 mx-2 w-50">
 					<label
 						className="form-label"
 						htmlFor="username">
@@ -72,7 +73,7 @@ function UserForm() {
 					</div>
 				</div>
 
-				<div className="mb-3 mx-2">
+				<div className="mb-3 mx-2 w-50">
 					<label
 						className="form-label"
 						htmlFor="password">
@@ -96,7 +97,7 @@ function UserForm() {
 			</div>
 
 			<div className="d-flex flex-row justify-content-start">
-				<div className="mb-3 mx-2">
+				<div className="mb-3 mx-2 w-50">
 					<label
 						className="form-label"
 						htmlFor="firstname">
@@ -114,7 +115,7 @@ function UserForm() {
 						type="text"
 					/>
 				</div>
-				<div className="mb-3 mx-2">
+				<div className="mb-3 mx-2 w-50">
 					<label
 						className="form-label"
 						htmlFor="lastname">
@@ -137,7 +138,7 @@ function UserForm() {
 				</div>
 			</div>
 			<div className="d-flex flex-row justify-content-start">	
-			<div className="mb-3 mx-2">
+			<div className="mb-3 mx-2 w-50">
 				<label
 					className="form-label"
 					htmlFor="phone">
@@ -159,7 +160,7 @@ function UserForm() {
 				</div>
 			</div>
 
-			<div className="mb-3 mx-2">
+			<div className="mb-3 mx-2 w-50">
 				<label
 					className="form-label"
 					htmlFor="email">
@@ -180,8 +181,9 @@ function UserForm() {
 				</div>
 			</div>
 				</div>
-
-			<div className="mb-3">
+<div className="mx-3">Role</div>
+			<div className="mx-3 mt-2">
+				
 				<input
 					type="checkbox"
 					id="isAdmin"
@@ -206,19 +208,38 @@ function UserForm() {
 					Reviewer
 				</label>
 			</div>
-
-			<div className="d-flex gap-2">
-				<button
-					type="submit"
-					className="btn btn-outline-primary">
-					Save
-				</button>
+			<div className="d-flex gap-2 justify-content-end">
+				
 				<Link
-					className="btn btn-outline-secondary"
+					className="btn btn-outline-primary"
 					to={"/users"}>
+						<svg
+						className="bi me-2"
+						width={15}
+						height={15}
+						fill="currentColor">
+						<use
+							xlinkHref={`${bootstrapIcons}#x-circle`}
+						/>
+					</svg>
 					Cancel
 				</Link>
+				<button
+					type="submit"
+					className="btn btn-primary">
+						<svg
+						className="bi me-2"
+						width={15}
+						height={15}
+						fill="currentColor">
+						<use
+							xlinkHref={`${bootstrapIcons}#save-fill`}
+						/>
+					</svg>
+					Save Vendor
+				</button>
 			</div>
+			
 		</form>
 	);
 }

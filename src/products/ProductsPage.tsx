@@ -6,19 +6,21 @@ function ProductsPage() {
 	return (
 		<>
 			<header className="d-flex justify-content-between">
-				<h4>Products</h4>
+				<h3>Products</h3>
+
 				<Link
 					to={"/products/create"}
 					role="button"
-					className="btn btn-outline-secondary">
+					className="btn btn-primary">
 					<svg
 						className="bi me-2"
-						width="15"
-						height="15"
-						fill="current color">
+						width={15}
+						height={15}
+						fill="currentColor">
 						<use
-							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}></use>
-					</svg>{" "}
+							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}
+						/>
+					</svg>
 					Add Product
 				</Link>
 			</header>

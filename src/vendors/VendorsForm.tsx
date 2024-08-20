@@ -405,7 +405,7 @@ function VendorForm() {
 			<div className="d-flex gap-2 justify-content-end">
 				
 				<Link
-					className="btn btn-secondary"
+					className="btn btn-outline-primary"
 					to={"/vendors"}>
 						<svg
 						className="bi me-2"

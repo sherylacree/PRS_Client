@@ -6,7 +6,7 @@ function VendorsPage() {
 	return (
 		<>
 			<header className="d-flex justify-content-between">
-				<h4>Vendors</h4>
+				<h3>Vendors</h3>
 				<Link
 					to={"/vendors/create"}
 					role="button"
