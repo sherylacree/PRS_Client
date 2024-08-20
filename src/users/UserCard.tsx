@@ -39,7 +39,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 								className="no-caret">
 								{/* <span className="text-primary fw-semibold "> */}
 								<svg
-									className=" m-2 text-primary"
+									className=" m-2 text-primary no-caret"
 									width={30}
 									height={20}
 									fill="currentColor">
@@ -71,6 +71,11 @@ function UserCard({ user, onRemove }: UserCardProps) {
 						</Dropdown>
 					</div>
 					<br />
+					<span>
+						<strong>
+							{user.firstname} {user.lastname}
+						</strong>
+					</span>
 
 					<span className="text-secondary">
 						{user.isAdmin && "Admin"}

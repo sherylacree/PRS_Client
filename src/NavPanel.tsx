@@ -1,12 +1,12 @@
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavPanel() {
 	return (
 		<nav
 			className="bg-light px-4 mh-100 justify-content-center pt-4"
 			style={{ width: "15rem" }}>
-			<ul className=" nav d-flex flex-column align-content-left w-100 list-inline">
+			<ul className="nav-pills nav d-flex flex-column align-content-left w-100 list-inline">
 				<a
 					className="text-decoration-none"
 					href="newrequests.html">

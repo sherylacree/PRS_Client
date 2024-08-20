@@ -8,6 +8,7 @@ import {
 import toast from "react-hot-toast";
 import { productAPI } from "./ProductAPI";
 import { Product } from "./Products";
+import { Vendor } from "../vendors/Vendor";
 
 
 function ProductForm() {
@@ -70,6 +71,31 @@ function ProductForm() {
 					{errors?.name?.message}
 				</div>
 			</div>
+
+			<div className="mb-3">
+        <label className="form-label" htmlFor="vendor">
+          Vendor
+        </label>
+        <select
+          {...register("vendorId", {
+            required: "Vendor is required",
+          })}
+          className={`form-select ${errors.vendorId && "is-invalid"} `}
+          id="vendor"
+        >
+          <option value="">Select...</option>
+          {vendors.map((vendor) => (
+            <option key={vendor.id} value={vendor.id}>
+              {vendor.name}
+            </option>
+          ))}
+        </select>
+        <div className="invalid-feedback">{errors?.vendorId?.message}</div>
+      </div>
+
+
+
+
 
 			<div className="mb-3">
 				<label
