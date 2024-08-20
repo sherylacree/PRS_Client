@@ -21,6 +21,11 @@ import ProductsCreate from "./products/ProductsCreate";
 import ProductsEdit from "./products/ProductsEdit";
 import ProductList from "./products/ProductList";
 import ProductsPage from "./products/ProductsPage";
+import RequestsPage from "./requests/RequestsPage";
+import RequestList from "./requests/RequestList";
+import RequestsCreate from "./requests/RequestCreate";
+import RequestsEdit from "./requests/RequestEdit";
+import RequestDetailPage from "./requests/RequestDetailPage";
 
 
 
@@ -96,9 +101,37 @@ function App() {
 								<Route
 									path="/products/edit/:id"									
 									element={
-										<ProductsEdit />
+										<ProductsEdit />								
+									}/>
+								<Route
+									path="/requests"
+									element={
+										<RequestsPage/>
+									}/>
+								<Route
+									path="/requests"
+									element={<RequestList />}
+								/>
+								<Route
+									path="/requests/create"
+									element={
+										<RequestsCreate />
 									}
 								/>
+								<Route
+									path="/requests/edit/:id"									
+									element={
+										<RequestsEdit />
+									} />
+									<Route
+									path="/requests/detail/:requestId"									
+									element={
+										<RequestDetailPage />
+									} />
+
+
+
+
 							</Routes>
 						</section>
 					</main>
