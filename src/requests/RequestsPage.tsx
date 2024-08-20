@@ -24,10 +24,12 @@ function RequestsPage() {
 					</svg>
 					Add Request
 				</Link>
+			
 			</header>
 			<hr />
 			<RequestTable />
 			<RequestList/>
+			
 		</>
 	);
 }
