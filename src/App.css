@@ -54,3 +54,8 @@ a {
     rgba(237, 250, 255, 1) 60%
   );
 }
+
+.no-arrow{ display:
+  after none !important;
+
+}

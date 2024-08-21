@@ -25,7 +25,6 @@ import RequestsPage from "./requests/RequestsPage";
 import RequestList from "./requests/RequestList";
 import RequestsCreate from "./requests/RequestCreate";
 import RequestsEdit from "./requests/RequestEdit";
-import RequestDetailPage from "./requests/RequestDetailPage";
 import RequestTable from "./requests/RequestTable";
 
 
