@@ -25,10 +25,7 @@ import RequestsPage from "./requests/RequestsPage";
 import RequestList from "./requests/RequestList";
 import RequestsCreate from "./requests/RequestCreate";
 import RequestsEdit from "./requests/RequestEdit";
-import RequestTable from "./requests/RequestTable";
 import RequestDetailPage from "./requests/RequestDetailPage";
-
-
 
 function App() {
 	return (
@@ -62,7 +59,6 @@ function App() {
 								/>
 								<Route
 									path="/vendors/edit/:id"
-									
 									element={
 										<VendorsEdit />
 									}
@@ -91,7 +87,9 @@ function App() {
 								/>
 								<Route
 									path="/products"
-									element={<ProductList />}
+									element={
+										<ProductList />
+									}
 								/>
 								<Route
 									path="/products/create"
@@ -100,18 +98,22 @@ function App() {
 									}
 								/>
 								<Route
-									path="/products/edit/:id"									
+									path="/products/edit/:id"
 									element={
-										<ProductsEdit />								
-									}/>
+										<ProductsEdit />
+									}
+								/>
 								<Route
 									path="/requests"
 									element={
-										<RequestsPage/>
-									}/>
+										<RequestsPage />
+									}
+								/>
 								<Route
 									path="/requests"
-									element={<RequestList />}
+									element={
+										<RequestList />
+									}
 								/>
 								<Route
 									path="/requests/create"
@@ -120,28 +122,23 @@ function App() {
 									}
 								/>
 								<Route
-									path="/requests/edit/:id"									
+									path="/requests/edit/:id"
 									element={
 										<RequestsEdit />
-									} />
-									<Route
-									path="/requests/table/:requestId"									
+									}
+								/>
+								<Route
+									path="/requests/detail/:requestId"
 									element={
-										<RequestTable />
-									} />
-<Route
-									path="/requests/list/:requestId"									
+										<RequestDetailPage />
+									}
+								/>
+								<Route
+									path="/requests/list/:requestId"
 									element={
 										<RequestList />
-									} />
-									<Route
-									path="/requests/detail/:id"									
-									element={
-										<RequestDetailPage />								
-									}/>
-
-
-
+									}
+								/>
 							</Routes>
 						</section>
 					</main>

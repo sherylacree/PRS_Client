@@ -42,12 +42,14 @@ function RequestForm() {
 		request
 	) => {
 		try {
-			if (request.isNew) {
-				await requestAPI.post(request);
+			if (request.isNew) { 
+				let newRequest =  await requestAPI.post(request);
+				navigate(`/requests/detail/${newRequest.id}`);
 			} else {
 				await requestAPI.put(request);
-			}
-			navigate("/requests");
+				navigate(`/requests/detail/${request.id}`);
+			} 
+			
 		} catch (error: any) {
 			toast.error(error.message);
 		}
@@ -229,9 +231,9 @@ function RequestForm() {
 					</svg>
 					Cancel
 				</Link>
-				<Link
-					className="btn btn-primary"
-					to={"/requests/requestdetailpage/:id"}>
+				<button
+					className="btn btn-primary">
+					
 					<svg
 						className="bi me-2"
 						width={15}
@@ -242,7 +244,7 @@ function RequestForm() {
 						/>
 					</svg>
 					Save Request
-				</Link>
+				</button>
 			</div>
 		</form>
 	);

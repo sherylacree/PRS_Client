@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import {
 	Link,
-	
 	useParams,
 	useSearchParams,
 } from "react-router-dom";
@@ -9,7 +8,6 @@ import { requestAPI } from "./RequestAPI";
 import toast from "react-hot-toast";
 
 import { Request } from "./Request";
-import RequestTableRow from "./RequestTableRow";
 
 
 function RequestDetailPage() {
@@ -40,27 +38,9 @@ function RequestDetailPage() {
 		loadRequest();
 	}, [searchParams.get("lastUpdated")]);
 
-    async function remove(request: Request) {
-		if (
-			confirm(
-				"Are you sure you want to delete this Request?"
-			)
-		) {
-			if (request.id) {
-				await requestAPI.delete(request.id);
-				let updatedRequests = request.filter(
-					(r: { id: number | undefined; }) => r.id !== request.id
-				);
-				setRequest(updatedRequests);
-				toast.success("Successfully deleted.");
-			}
-		}
-	}
 
-	
+
 	if (!request) return null;
-
-   
 
 	return (
 		<>
@@ -125,11 +105,11 @@ function RequestDetailPage() {
 								</dd>
 							</dl>
 						</section>
-						
-                        <section className="card p-4 mt-4 w-100">
+
+						<section className="card p-4 mt-4 w-100">
 							<header className="d-flex justify-content-between">
 								<h5>Items</h5>
-                                <hr />
+								<hr />
 
 								<Link
 									className="btn btn-outline-primary"
@@ -137,17 +117,9 @@ function RequestDetailPage() {
 									+ add product
 								</Link>
 							</header>
-						
-                            {requests.map((request) => (
-				<RequestTableRow
-					key={request.id}
-					request={request}
-					onRemove={remove}
-				/>
-			))}
-						</section>
 
-                        
+							
+						</section>
 					</>
 				)}
 			</>

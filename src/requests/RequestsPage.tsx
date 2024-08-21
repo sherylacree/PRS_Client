@@ -28,10 +28,10 @@ function RequestsPage() {
 
 			<select className="justify-content-start w-25 form-select my-4">
 				<option value="">All</option>
-				<option value="APPROVED">Approveed</option>
-				<option value="REJECTED">Rejected</option>
-				<option value="NEW">New</option>
-				<option value="REVIEW">Review</option>
+				<option value="approved">Approveed</option>
+				<option value="rejected">Rejected</option>
+				<option value="new">New</option>
+				<option value="review">Review</option>
 			</select>
 			
 			<section className="bg-body-tertiary w-100 p-4">
