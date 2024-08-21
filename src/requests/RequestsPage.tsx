@@ -1,7 +1,6 @@
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 import { Link } from "react-router-dom";
 import RequestTable from "./RequestTable";
-import RequestList from "./RequestList";
 
 function RequestsPage() {
 	return (
@@ -22,14 +21,23 @@ function RequestsPage() {
 							xlinkHref={`${bootstrapIcons}#plus-circle-fill`}
 						/>
 					</svg>
-					Add Request
+					Create a request
 				</Link>
-			
 			</header>
 			<hr />
-			<RequestTable />
-			<RequestList/>
+
+			<select className="justify-content-start w-25 form-select my-4">
+				<option value="">All</option>
+				<option value="APPROVED">Approveed</option>
+				<option value="REJECTED">Rejected</option>
+				<option value="NEW">New</option>
+				<option value="REVIEW">Review</option>
+			</select>
 			
+			<section className="bg-body-tertiary w-100 p-4">
+
+			<RequestTable />
+			</section>
 		</>
 	);
 }

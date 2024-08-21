@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
-import { Request } from "./Requests";
+import { Request } from "./Request";
 import { requestAPI } from "./RequestAPI";
 import toast from "react-hot-toast";
 import RequestCard from "./RequestCard";
-
 
 function RequestList() {
 	const [requests, setRequests] = useState<Request[]>([]);
 	const [busy, setBusy] = useState(false);
 
 	async function loadRequests() {
-		setBusy(true);
-		let data = await requestAPI.list();
-		setRequests(data);
-		setBusy(false);
+		try {
+			setBusy(true);
+			const data = await requestAPI.list();
+			setRequests(data);
+		} catch (error: any) {
+			toast.error(error.message);
+		} finally {
+			setBusy(false);
+		}
 	}
 	useEffect(() => {
 		loadRequests();

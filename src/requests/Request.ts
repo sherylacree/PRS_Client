@@ -1,3 +1,4 @@
+import { Product } from "../products/Products";
 import { User } from "../users/User";
 
 export class Request {
@@ -10,6 +11,8 @@ export class Request {
 	total = 0;
 	userId: number | undefined;
 	user: User | undefined;
+	product: Product | undefined;
+    filter: any;
 
 	get isNew(): boolean {
 		return this.id === undefined;

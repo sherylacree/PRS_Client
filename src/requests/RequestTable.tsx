@@ -1,4 +1,4 @@
-import { Request } from "./Requests";
+import { Request } from "./Request";
 import { useEffect, useState } from "react";
 import "../App";
 import { requestAPI } from "./RequestAPI";

@@ -7,7 +7,7 @@ import {
 
 import toast from "react-hot-toast";
 import { requestAPI } from "./RequestAPI";
-import { Request } from "./Requests";
+import { Request } from "./Request";
 import { User } from "../users/User";
 import { userAPI } from "../users/UserAPI";
 import { useState } from "react";
@@ -130,7 +130,7 @@ function RequestForm() {
 									errors.deliveryMode &&
 									"is-invalid"
 								} `}
-								id="state">
+								id="deliveryMode">
 								<option value="">
 									Select...
 								</option>
@@ -229,7 +229,9 @@ function RequestForm() {
 					</svg>
 					Cancel
 				</Link>
-				<button className="btn btn-primary">
+				<Link
+					className="btn btn-primary"
+					to={"/requests/requestdetailpage/:id"}>
 					<svg
 						className="bi me-2"
 						width={15}
@@ -240,7 +242,7 @@ function RequestForm() {
 						/>
 					</svg>
 					Save Request
-				</button>
+				</Link>
 			</div>
 		</form>
 	);

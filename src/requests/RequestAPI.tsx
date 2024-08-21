@@ -4,12 +4,10 @@ import {
 	delay,
 	parseJSON,
 } from "../utility/fetchUtilities";
-import { Request } from "./Requests";
-
+import { Request } from "./Request";
 
 const url = `${BASE_URL}/requests
 `;
-
 
 export const requestAPI = {
 	list(): Promise<Request[]> {
@@ -24,8 +22,6 @@ export const requestAPI = {
 			.then(checkStatus)
 			.then(parseJSON);
 	},
-
-	
 
 	post(request: Request) {
 		return fetch(`${url}`, {
@@ -56,5 +52,3 @@ export const requestAPI = {
 		}).then(checkStatus);
 	},
 };
-
-

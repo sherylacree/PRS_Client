@@ -5,7 +5,7 @@ function RequestsCreate() {
 	return (
 		<>
 		
-			<h3> Create Request </h3>
+			<h3> New Request </h3>
 			<hr />
 			<RequestForm />
 		</>

@@ -31,11 +31,11 @@ function UserCard({ user, onRemove }: UserCardProps) {
 							{user.firstname} {user.lastname}
 						</strong>
 						<Dropdown
-							className="d-inline"
+							className="d-inline dropdown-toggle"
 							aria-expanded="false">
 							<Dropdown.Toggle
 								variant=""
-								className="no-caret"
+								className="no-arrow"
 								style={{
 									background: "none",
 								}}>

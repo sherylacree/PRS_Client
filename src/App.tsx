@@ -26,6 +26,7 @@ import RequestList from "./requests/RequestList";
 import RequestsCreate from "./requests/RequestCreate";
 import RequestsEdit from "./requests/RequestEdit";
 import RequestTable from "./requests/RequestTable";
+import RequestDetailPage from "./requests/RequestDetailPage";
 
 
 
@@ -133,6 +134,11 @@ function App() {
 									element={
 										<RequestList />
 									} />
+									<Route
+									path="/requests/detail/:id"									
+									element={
+										<RequestDetailPage />								
+									}/>
 
 
 
