@@ -32,7 +32,7 @@ function RequestLineTableRow({
 				<div className="d-flex gap-2">
 					<Link
 						className="nav-link "
-						to={`requestlines/edit/${requestLine.id}`}>
+						to={`requestLine/edit/${requestLine.id}`}>
 						<svg
 							className="bi me-2"
 							width={15}

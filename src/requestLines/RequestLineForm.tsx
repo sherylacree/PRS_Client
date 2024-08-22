@@ -49,7 +49,7 @@ function RequestLineForm() {
 				navigate(`/requests/detail/${newRequestLine.requestId}`);
 			} else {
 				await requestLineAPI.put(requestLine);
-				// navigate(`/requests/detail/${requestLine.requestId}`);
+				navigate(`/requests/detail/${requestLine.requestId}`);
 			}
 		} catch (error: any) {
 			toast.error(error.message);
@@ -152,7 +152,7 @@ function RequestLineForm() {
 									xlinkHref={`${bootstrapIcons}#save-fill`}
 								/>
 							</svg>
-							Save Product
+							Save Item
 						</button>
 					</div>
 				</div>
