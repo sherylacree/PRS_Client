@@ -14,7 +14,11 @@ import { requestLineAPI } from "./RequestLIneAPI";
 function RequestLineForm() {
 	const navigate = useNavigate();
 	const { id } = useParams<{ id: string }>();
-	const requestLineId = Number(id);
+	const requestId = Number(id);
+	
+	const { requestLineId :requestLineIdAsString} = useParams<{ requestLineId: string }>();
+	const requestLineId = Number(requestLineIdAsString);
+
 	const [products, setProducts] = useState<Product[]>([]);
 
 	const {
@@ -27,7 +31,9 @@ function RequestLineForm() {
 			setProducts(productList);
 
 			if (!requestLineId) {
-				return Promise.resolve(new RequestLine());
+				
+				
+				return Promise.resolve(new RequestLine({requestId: requestId}));
 			} else {
 				return await requestLineAPI.find(requestLineId);
 			}

@@ -1,11 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 //import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
-import {
-	BrowserRouter,
-	Route,
-	Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavPanel from "./NavPanel";
 import Header from "./Header";
 import IndexPage from "./IndexPage";
@@ -26,7 +22,7 @@ import RequestList from "./requests/RequestList";
 import RequestsCreate from "./requests/RequestCreate";
 import RequestsEdit from "./requests/RequestEdit";
 import RequestDetailPage from "./requests/RequestDetailPage";
-import RequestLineEdit from "./requestLines/RequestLineEdit"
+import RequestLineEdit from "./requestLines/RequestLineEdit";
 import RequestLineCreate from "./requestLines/RequestLineCreate";
 import { Toaster } from "react-hot-toast";
 
@@ -37,22 +33,19 @@ function App() {
 				<div>
 					<Header />
 					<main className="d-flex">
-
-					<Toaster
-            toastOptions={{
-              success: {
-                iconTheme: {
-                  primary: "#0d6efd",
-                  secondary: "white",
-                },
-              },
-              style: {
-                maxWidth: 500,
-              },
-            }}
-          />
-
-
+						<Toaster
+							toastOptions={{
+								success: {
+									iconTheme: {
+										primary: "#0d6efd",
+										secondary: "white",
+									},
+								},
+								style: {
+									maxWidth: 500,
+								},
+							}}
+						/>
 
 						<NavPanel />
 						<section className="content container-fluid mx-5 my-2 py-4">
@@ -63,9 +56,7 @@ function App() {
 								/>
 								<Route
 									path="/vendors"
-									element={
-										<VendorsPage />
-									}
+									element={<VendorsPage />}
 								/>
 								<Route
 									path="/vendors"
@@ -73,15 +64,11 @@ function App() {
 								/>
 								<Route
 									path="/vendors/create"
-									element={
-										<VendorsCreate />
-									}
+									element={<VendorsCreate />}
 								/>
 								<Route
 									path="/vendors/edit/:id"
-									element={
-										<VendorsEdit />
-									}
+									element={<VendorsEdit />}
 								/>
 								<Route
 									path="/users"
@@ -101,71 +88,49 @@ function App() {
 								/>
 								<Route
 									path="/products"
-									element={
-										<ProductsPage />
-									}
+									element={<ProductsPage />}
 								/>
 								<Route
 									path="/products"
-									element={
-										<ProductList />
-									}
+									element={<ProductList />}
 								/>
 								<Route
 									path="/products/create"
-									element={
-										<ProductsCreate />
-									}
+									element={<ProductsCreate />}
 								/>
 								<Route
 									path="/products/edit/:id"
-									element={
-										<ProductsEdit />
-									}
+									element={<ProductsEdit />}
 								/>
 								<Route
 									path="/requests"
-									element={
-										<RequestsPage />
-									}
+									element={<RequestsPage />}
 								/>
 
 								<Route
 									path="/requests/create"
-									element={
-										<RequestsCreate />
-									}
+									element={<RequestsCreate />}
 								/>
 								<Route
 									path="/requests/edit/:id"
-									element={
-										<RequestsEdit />
-									}
+									element={<RequestsEdit />}
 								/>
 								<Route
 									path="/requests/detail/:requestId"
-									element={
-										<RequestDetailPage />
-									}
+									element={<RequestDetailPage />}
 								/>
 								<Route
 									path="/requests/list/:requestId"
-									element={
-										<RequestList />
-									}
+									element={<RequestList />}
 								/>
 
 								<Route
 									path="request/detail/:id/requestLine/create"
-									element={
-										<RequestLineCreate />
-									}
+									element={<RequestLineCreate />}
 								/>
 								<Route
-									path="/request/detail/:id/requestLine/edit"
-									element={
-										<RequestLineEdit />
-									}
+									path="/request/detail/:id/requestLine/edit/:requestLineId"
+									element={<RequestLineEdit />}
 								/>
 							</Routes>
 						</section>
