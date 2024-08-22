@@ -125,7 +125,7 @@ function ProductForm() {
 					className={`form-control ${
 						errors.price && "is-invalid"
 					} `}
-					type="text"
+					type="number"
 					placeholder="Enter product's price"
 					autoFocus
 				/>
