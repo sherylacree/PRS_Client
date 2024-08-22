@@ -28,6 +28,7 @@ import RequestsEdit from "./requests/RequestEdit";
 import RequestDetailPage from "./requests/RequestDetailPage";
 import RequestLineEdit from "./requestLines/RequestLineEdit";
 import RequestLineCreate from "./requestLines/RequestLineCreate";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 	return (
@@ -36,6 +37,23 @@ function App() {
 				<div>
 					<Header />
 					<main className="d-flex">
+
+					<Toaster
+            toastOptions={{
+              success: {
+                iconTheme: {
+                  primary: "#0d6efd",
+                  secondary: "white",
+                },
+              },
+              style: {
+                maxWidth: 500,
+              },
+            }}
+          />
+
+
+
 						<NavPanel />
 						<section className="content container-fluid mx-5 my-2 py-4">
 							<Routes>
@@ -138,13 +156,13 @@ function App() {
 								/>
 
 								<Route
-									path="/requestLine/create"
+									path="request/detail/:id/requestLine/create"
 									element={
 										<RequestLineCreate />
 									}
 								/>
 								<Route
-									path="/requestLine/edit/:id"
+									path="/request/detail/:id/requestLine/edit"
 									element={
 										<RequestLineEdit />
 									}

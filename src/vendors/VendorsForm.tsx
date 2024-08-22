@@ -40,6 +40,14 @@ function VendorForm() {
 			navigate("/vendors");
 		} catch (error: any) {
 			toast.error(error.message);
+
+
+
+
+
+
+
+			
 		}
 	};
 

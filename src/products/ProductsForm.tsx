@@ -53,11 +53,11 @@ function ProductForm() {
 
 	return (
 		<form
-			className="w-100"
+			className="w-75"
 			onSubmit={handleSubmit(save)}
 			noValidate>
-			<div className=" d-flex w-100">
-				<div className="mb-3 mx-2 w-25">
+			<div className=" d-flex">
+				<div className="mb-3 w-25">
 					<label
 						className="form-label"
 						htmlFor="partNbr">
@@ -81,7 +81,7 @@ function ProductForm() {
 					</div>
 				</div>
 
-				<div className="mb-3 mx-2 w-75">
+				<div className="mb-3 ms-3 w-50">
 					<label
 						className="form-label"
 						htmlFor="name">
@@ -106,7 +106,7 @@ function ProductForm() {
 				</div>
 			</div>
 
-			<div className="w-100 d-flex">
+			<div className="d-flex">
 
 
 
@@ -157,7 +157,7 @@ function ProductForm() {
 				</div>
 			</div>
 
-			<div className="mb-3 me-2 w-50">
+			<div className="mb-3 me-2 w-25">
 				<label
 					className="form-label"
 					htmlFor="vendor">
@@ -186,12 +186,14 @@ function ProductForm() {
 			</div>
 			</div>
 			
+			
+			
 
 			
 			
 			
 			
-			<div className="d-flex gap-2 justify-content-end">
+			<div className="gap-3 d-flex justify-content-end w-75 mt-3">
 				<Link
 					className="btn btn-outline-primary"
 					to={"/products"}>
@@ -221,6 +223,7 @@ function ProductForm() {
 					Save Product
 				</button>
 			</div>
+			
 		</form>
 	);
 }
