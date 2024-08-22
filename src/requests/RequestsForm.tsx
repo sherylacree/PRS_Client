@@ -1,9 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import {
-	Link,
-	useNavigate,
-	useParams,
-} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import toast from "react-hot-toast";
 import { requestAPI } from "./RequestAPI";
@@ -18,7 +14,6 @@ function RequestForm() {
 	const { id } = useParams<{ id: string }>();
 	const requestId = Number(id);
 	const [users, setUsers] = useState<User[]>([]);
-	
 
 	const {
 		register,
@@ -30,26 +25,18 @@ function RequestForm() {
 			setUsers(userList);
 
 			if (!requestId) {
-				return Promise.resolve(
-					new Request({ userId: 911 })
-				);
+				return Promise.resolve(new Request({ userId: 911 }));
 			} else {
 				return await requestAPI.find(requestId);
 			}
 		},
 	});
 
-	const save: SubmitHandler<Request> = async (
-		request
-	) => {
+	const save: SubmitHandler<Request> = async (request) => {
 		try {
 			if (request.isNew) {
-				let newRequest = await requestAPI.post(
-					request
-				);
-				navigate(
-					`/requests/detail/${newRequest.id}`
-				);
+				let newRequest = await requestAPI.post(request);
+				navigate(`/requests/detail/${newRequest.id}`);
 			} else {
 				await requestAPI.put(request);
 				navigate(`/requests/detail/${request.id}`);
@@ -57,8 +44,6 @@ function RequestForm() {
 		} catch (error: any) {
 			toast.error(error.message);
 		}
-		
-
 	};
 
 	return (
@@ -77,12 +62,10 @@ function RequestForm() {
 						<input
 							id="description"
 							{...register("description", {
-								required:
-									"Description is required",
+								required: "Description is required",
 							})}
 							className={`form-control ${
-								errors.description &&
-								"is-invalid"
+								errors.description && "is-invalid"
 							} `}
 							type="text"
 							placeholder="Enter a description"
@@ -102,12 +85,10 @@ function RequestForm() {
 						<input
 							id="justification"
 							{...register("justification", {
-								required:
-									"Justification is required",
+								required: "Justification is required",
 							})}
 							className={`form-control ${
-								errors.justification &&
-								"is-invalid"
+								errors.justification && "is-invalid"
 							} `}
 							type="text"
 							placeholder="Enter your justification"
@@ -127,36 +108,22 @@ function RequestForm() {
 								Delivery Method
 							</label>
 							<select
-								{...register(
-									"deliveryMode",
-									{
-										required:
-											"Delivery Method is required",
-									}
-								)}
+								{...register("deliveryMode", {
+									required: "Delivery Method is required",
+								})}
 								className={`form-select ${
-									errors.deliveryMode &&
-									"is-invalid"
+									errors.deliveryMode && "is-invalid"
 								} `}
 								id="deliveryMode">
-								<option value="">
-									Select...
-								</option>
-								<option value="PICKUP">
-									Pick up
-								</option>
-								<option value="DELIVERY">
-									Delivery
-								</option>
+								<option value="">Select...</option>
+								<option value="PICKUP">Pick up</option>
+								<option value="DELIVERY">Delivery</option>
 								<option value="SIGNATUREDELIVERY">
 									Signature Delivery
 								</option>
 							</select>
 							<div className="invalid-feedback">
-								{
-									errors?.deliveryMode
-										?.message
-								}
+								{errors?.deliveryMode?.message}
 							</div>
 						</div>
 
@@ -167,39 +134,25 @@ function RequestForm() {
 								Status
 							</label>
 
-							
 							{/* function RequestForm({isEditMode=false, register, errors}) {
 								return( */}
-							
+
 							<select
 								{...register("status", {
-									required:
-										"Set Status is Required",
+									required: "Set Status is Required",
 								})}
 								className={`form-select ${
-									errors.status &&
-									"is-invalid"
+									errors.status && "is-invalid"
 								} `}
-								id="status" 
-								defaultValue="New" disabled>
-								<option value="">
-									Select...
-								</option>
-								<option value="NEW">
-									New
-								</option>
-								<option value="REVIEW">
-									Review
-								</option>
-								<option value="APPROVED	">
-									Approved
-								</option>
-								<option value="REJECTED">
-									Rejected
-								</option>
+								id="status"
+								defaultValue="New"
+								disabled>
+								<option value="">Select...</option>
+								<option value="New">New</option>
+								<option value="Review">Review</option>
+								<option value="Approved">Approved</option>
+								<option value="Rejected">Rejected</option>
 							</select>
-								
-							
 						</div>
 
 						<div className="ms-5 w-50">
@@ -211,23 +164,17 @@ function RequestForm() {
 							<select
 								id="user"
 								{...register("userId", {
-									required:
-										"User is required",
+									required: "User is required",
 								})}
 								className={`form-select ${
-									errors.userId &&
-									"is-invalid"
+									errors.userId && "is-invalid"
 								} `}>
-								<option value="">
-									Select...
-								</option>
+								<option value="">Select...</option>
 								{users.map((user) => (
 									<option
 										key={user.id}
 										value={user.id}>
-										{user?.firstname}
-										{" "}
-										{user?.lastname}
+										{user?.firstname} {user?.lastname}
 									</option>
 								))}
 							</select>
@@ -248,9 +195,7 @@ function RequestForm() {
 						width={15}
 						height={15}
 						fill="currentColor">
-						<use
-							xlinkHref={`${bootstrapIcons}#x-circle`}
-						/>
+						<use xlinkHref={`${bootstrapIcons}#x-circle`} />
 					</svg>
 					Cancel
 				</Link>
@@ -260,9 +205,7 @@ function RequestForm() {
 						width={15}
 						height={15}
 						fill="currentColor">
-						<use
-							xlinkHref={`${bootstrapIcons}#save-fill`}
-						/>
+						<use xlinkHref={`${bootstrapIcons}#save-fill`} />
 					</svg>
 					Save Request
 				</button>

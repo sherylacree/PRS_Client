@@ -28,7 +28,7 @@ function ProductCard({
 				</div>
 				<div className="mt-5">{product.vendor?.name}</div>
 							<small>
-					<span className="badge text-bg-secondary rounded-pill ">
+					<span className="badge text-bg-primary rounded-pill ">
 						{product.partNbr}
 					</span>
 				</small>

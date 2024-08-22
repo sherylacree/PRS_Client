@@ -46,7 +46,23 @@ function RequestTableRow({
 						review
 					</Link>
 					|
-					<a
+
+					<Link
+						className="small"
+						to={"/requests/"}
+						onClick={(
+							event: SyntheticEvent
+						) => {
+							event.preventDefault();
+							onRemove( request);
+						}}>
+						delete
+					</Link>
+
+
+
+
+					{/* <a
 						className="small"
 						onClick={(
 							event: SyntheticEvent
@@ -55,7 +71,7 @@ function RequestTableRow({
 							onRemove(request);
 						}}>
 						delete
-					</a>
+					</a> */}
 				</div>
 			</td>
 		</tr>

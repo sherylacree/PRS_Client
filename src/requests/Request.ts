@@ -7,7 +7,7 @@ export class Request {
 	justification = "";
 	rejectionReason = "";
 	deliveryMode = "";
-	status = "NEW";
+	status = "New";
 	total = 0;
 	userId: number | undefined;
 	user: User | undefined;
