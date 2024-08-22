@@ -14,7 +14,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 	return (
 		<>
 			<div
-				className="d-flex bg-light gap-4 p-4"
+				className="d-flex bg-light gap-4 P-4"
 				style={{ width: "25rem" }}>
 				<div
 					style={{
@@ -26,7 +26,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 					{user.lastname[0]}
 				</div>
 				<address>
-					<div className="d-flex">
+					<div>
 						<strong>
 							{user.firstname} {user.lastname}
 						</strong>
@@ -74,7 +74,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 					</div>
 					{/* <br /> */}
 
-					<div className="text-secondary">
+					<div className="text-secondary mb-2">
 						{user.isAdmin && "Admin"}{" "}
 						{user.isAdmin &&
 							user.isReviewer &&
@@ -82,7 +82,7 @@ function UserCard({ user, onRemove }: UserCardProps) {
 						{user.isReviewer && "Reviewer"}
 					</div>
 					{/* <br /> */}
-					<span className="text-secondary">
+					<span className="text-secondary mt-2">
 						{user.phone}
 					</span>
 					{/* <br />

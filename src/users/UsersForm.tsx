@@ -225,7 +225,7 @@ function UserForm() {
 					Cancel
 				</Link>
 				<button
-					type="submit"
+					// type="form-check"
 					className="btn btn-primary">
 						<svg
 						className="bi me-2"
@@ -236,7 +236,7 @@ function UserForm() {
 							xlinkHref={`${bootstrapIcons}#save-fill`}
 						/>
 					</svg>
-					Save Vendor
+					Save User
 				</button>
 			</div>
 			

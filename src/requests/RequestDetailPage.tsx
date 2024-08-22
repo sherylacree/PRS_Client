@@ -107,23 +107,21 @@ function RequestDetailPage() {
 							</dl>
 						</section>
 
-						<section className="card p-4 mt-4 w-100">
+						<section className="p-4 mt-4 w-75">
 							<header className="justify-content-start">
-								<h3>New Request List</h3>
-
-								<hr />
-                                <div className="align-items-start">
+								
+                                <div className="align-items-start mt-0">
 									
 									<RequestLineForm/>
 								</div>            
                                 
                             
 
-                                <hr />
+                                
 
 								<Link
-									className="btn btn-outline-primary justify-content-start p-2"
-									to={`/requestline/detail/${request.id}`}>
+									className="btn btn-outline-primary justify-content-start p-2 mt-4"
+									to={`/requests/detail/${request.id}`}>
 									+ add line
 								</Link>
 							</header>

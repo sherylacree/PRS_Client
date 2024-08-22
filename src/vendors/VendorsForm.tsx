@@ -45,7 +45,7 @@ function VendorForm() {
 
 	return (
 		<form
-			className="w-100"
+			className="w-75"
 			onSubmit={handleSubmit(save)}
 			noValidate>
 			<div className="d-flex">

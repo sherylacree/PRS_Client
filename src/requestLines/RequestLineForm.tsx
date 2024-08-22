@@ -29,16 +29,12 @@ function RequestLineForm() {
 			if (!requestLineId) {
 				return Promise.resolve(new RequestLine());
 			} else {
-				return await requestLineAPI.find(
-					requestLineId
-				);
+				return await requestLineAPI.find(requestLineId);
 			}
 		},
 	});
 
-	const save: SubmitHandler<RequestLine> = async (
-		requestLines
-	) => {
+	const save: SubmitHandler<RequestLine> = async (requestLines) => {
 		try {
 			if (requestLines.isNew) {
 				await requestLineAPI.post(requestLines);
@@ -53,14 +49,14 @@ function RequestLineForm() {
 
 	return (
 		<form
-			className="w-100 card mt-5"
+			className="w-100  ms-0 card"
 			onSubmit={handleSubmit(save)}
 			noValidate>
-			<div className="p-4 m-2 w-100 justify-content-start">
-				<h4 className="p-4 m-2 justify-content-start">
+			<div className="p-2 mt-0 w-100 justify-content-start">
+				<h4 className="p-4  justify-content-start">
 					<strong>Items</strong>
 				</h4>
-				<div className="p-4 m-2 w-100">
+				<div className="p-2 m-2 w-100">
 					<label
 						className="form-label"
 						htmlFor="product">
@@ -88,8 +84,8 @@ function RequestLineForm() {
 					</div>
 				</div>
 
-				<div className="w-100 d-flex justify-content-start">
-					<div className="p-4 m-2 w-100 justify-content-start">
+				<div className="w-100 justify-content-start">
+					<div className="p-2 ms-2 mt-4 mb-4 w-100 justify-content-start">
 						<label
 							className="form-label"
 							htmlFor="quantity">
@@ -99,12 +95,10 @@ function RequestLineForm() {
 							id="quantity"
 							defaultValue={0}
 							{...register("quantity", {
-								required:
-									"Quantity is required",
+								required: "Quantity is required",
 							})}
 							className={`form-control ${
-								errors.quantity &&
-								"is-invalid"
+								errors.quantity && "is-invalid"
 							} `}
 							type="number"
 							autoFocus
@@ -113,28 +107,24 @@ function RequestLineForm() {
 							{errors?.quantity?.message}
 						</div>
 
-						<label htmlFor="amount">
-							Amount
-						</label>
+						<label htmlFor="amount" className="mt-5">Amount</label>
 						{/* <div>
-							
-							{(requestLines.product?.price) *
-								(requestLine.quantity)}
+							$
+							{(requestLine?.product?.price ?? 0) *
+								(requestLine?.quantity ?? 0)}
 						</div> */}
 					</div>
+				
+
 
 					<div className="d-flex gap-2 justify-content-end">
-						<button
-							className="btn btn-outline-primary">
-							
+						<button className="btn btn-outline-primary">
 							<svg
 								className="bi me-2"
 								width={15}
 								height={15}
 								fill="currentColor">
-								<use
-									xlinkHref={`${bootstrapIcons}#x-circle`}
-								/>
+								<use xlinkHref={`${bootstrapIcons}#x-circle`} />
 							</svg>
 							Cancel
 						</button>
