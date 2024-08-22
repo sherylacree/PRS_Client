@@ -58,7 +58,7 @@ function RequestLineForm() {
 			noValidate>
 			<div className="p-4 m-2 w-100 justify-content-start">
 				<h4 className="p-4 m-2 justify-content-start">
-					<strong>Item</strong>
+					<strong>Items</strong>
 				</h4>
 				<div className="p-4 m-2 w-100">
 					<label
