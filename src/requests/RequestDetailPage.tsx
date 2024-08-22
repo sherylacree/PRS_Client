@@ -8,6 +8,7 @@ import { requestAPI } from "./RequestAPI";
 import toast from "react-hot-toast";
 
 import { Request } from "./Request";
+import RequestLineForm from "../requestLines/RequestLineForm";
 
 
 function RequestDetailPage() {
@@ -45,7 +46,7 @@ function RequestDetailPage() {
 	return (
 		<>
 			<nav className="d-flex justify-content-between pe-2">
-				<h4>Request</h4>
+				<h3>Request</h3>
 				<Link
 					to={`/requests/edit/${request.id}`}
 					className="btn btn-outline-primary">
@@ -108,10 +109,13 @@ function RequestDetailPage() {
 
 						<section className="card p-4 mt-4 w-100">
 							<header className="justify-content-start">
-								<h5>Items</h5>
+								<h3>New Request List</h3>
 
 								<hr />
-                                <div className="align-items-start">add table here</div>            
+                                <div className="align-items-start">
+									
+									<RequestLineForm/>
+								</div>            
                                 
                             
 
@@ -119,7 +123,7 @@ function RequestDetailPage() {
 
 								<Link
 									className="btn btn-outline-primary justify-content-start p-2"
-									to={`/requests/detail/${request.id}/product/create`}>
+									to={`/requestline/detail/${request.id}`}>
 									+ add line
 								</Link>
 							</header>
