@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
-import {
-	Link,
-	useParams,
-	useSearchParams,
-} from "react-router-dom";
+import {Link,useParams,	useSearchParams,} from "react-router-dom";
 import { requestAPI } from "./RequestAPI";
 import toast from "react-hot-toast";
-
 import { Request } from "./Request";
-
+import { RequestLine } from "../requestLines/RequestLine";
 import RequestLineTable from "../requestLines/RequestLineTable";
+import { requestLineAPI } from "../requestLines/RequestLIneAPI";
 
 
 function RequestDetailPage() {
@@ -40,6 +36,20 @@ function RequestDetailPage() {
 		loadRequest();
 	}, [searchParams.get("lastUpdated")]);
 
+	async function removeRequestLine(requestLine: RequestLine) {
+		if (confirm("Are you sure you want to delete this item?")) {
+		  if (requestLine.id) {
+			await requestLineAPI.delete(requestLine.id);
+			toast.success("Successfully deleted.");
+			let updatedRequestLine = request?.requestLines?.filter((l) => l.id !== requestLine.id);
+			if (request) {
+			  setRequest({ ...request, requestLine: updatedRequestLine } as Request);
+			}
+		  }
+		}
+	  }
+
+	
 
 
 	if (!request) return null;
@@ -122,7 +132,7 @@ function RequestDetailPage() {
 
 								<Link
 									className="btn btn-outline-primary justify-content-start p-2 mt-4"
-									to={`/requests/detail/${request.id}`}>
+									to={`/requests/detail/${request.id}/requestLine/create`}>
 									+ add line
 								</Link>
 							</header>

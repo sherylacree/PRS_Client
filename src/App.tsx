@@ -125,11 +125,11 @@ function App() {
 								/>
 
 								<Route
-									path="request/detail/:id/requestLine/create"
+									path="/requests/detail/:id/requestLine/create"
 									element={<RequestLineCreate />}
 								/>
 								<Route
-									path="/request/detail/:id/requestLine/edit/:requestLineId"
+									path="requests/detail/:id/requestLine/edit/:requestLineId"
 									element={<RequestLineEdit />}
 								/>
 							</Routes>

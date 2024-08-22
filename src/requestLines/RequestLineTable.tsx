@@ -8,21 +8,21 @@ interface RequestLineTableProps {
 
 function RequestLineTable(props: RequestLineTableProps) {
 	async function remove(requestline: RequestLine) {
-		// 	if (
-		// 		confirm(
-		// 			"Are you sure you want to delete this Item?"
-		// 		)
-		// 	) {
-		// 		if (requestLine.id) {
-		// 			await requestLineAPI.delete(requestLine.id);
-		// 			let updatedRequestLine =
-		// 				requestLine.filter(
-		// 					(l: { id: any; }) => l.id !== requestLine.id
-		// 				);
-		// 			setRequestLine(updatedRequestLine);
-		// 			toast.success("Successfully deleted.");
-		// 		}
-		// 	}
+			// if (
+			// 	confirm(
+			// 		"Are you sure you want to delete this Item?"
+			// 	)
+			// ) {
+			// 	if (requestLine.id) {
+			// 		await requestLineAPI.delete(requestLine.id);
+			// 		let updatedRequestLine =
+			// 			requestLine.filter(
+			// 				(l: { id: any; }) => l.id !== requestLine.id
+			// 			);
+			// 		setRequestLine(updatedRequestLine);
+			// 		toast.success("Successfully deleted.");
+			// 	}
+			// }
 	}
 
 	return (

@@ -6,7 +6,7 @@ import {
 } from "../utility/fetchUtilities";
 import {  RequestLine} from "./RequestLine";
 
-const url = `${BASE_URL}/requests
+const url = `${BASE_URL}/requestlines
 `;
 
 export const requestLineAPI = {

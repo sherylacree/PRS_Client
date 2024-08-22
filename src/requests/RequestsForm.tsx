@@ -146,7 +146,7 @@ function RequestForm() {
 								} `}
 								id="status"
 								defaultValue="New"
-								disabled>
+								>
 								<option value="">Select...</option>
 								<option value="New">New</option>
 								<option value="Review">Review</option>

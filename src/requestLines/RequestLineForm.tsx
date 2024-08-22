@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import { Product } from "../products/Products";
@@ -15,10 +15,10 @@ function RequestLineForm() {
 	const navigate = useNavigate();
 	const { id } = useParams<{ id: string }>();
 	const requestId = Number(id);
-	
-	const { requestLineId :requestLineIdAsString} = useParams<{ requestLineId: string }>();
+	const { requestLineId: requestLineIdAsString } = useParams<{
+		requestLineId: string;
+	}>();
 	const requestLineId = Number(requestLineIdAsString);
-
 	const [products, setProducts] = useState<Product[]>([]);
 
 	const {
@@ -31,23 +31,26 @@ function RequestLineForm() {
 			setProducts(productList);
 
 			if (!requestLineId) {
-				
-				
-				return Promise.resolve(new RequestLine({requestId: requestId}));
+				return Promise.resolve(
+					new RequestLine({ requestId: requestId })
+				);
 			} else {
 				return await requestLineAPI.find(requestLineId);
 			}
 		},
 	});
 
-	const save: SubmitHandler<RequestLine> = async (requestLines) => {
+	const save: SubmitHandler<RequestLine> = async (
+		requestLine: RequestLine
+	) => {
 		try {
-			if (requestLines.isNew) {
-				await requestLineAPI.post(requestLines);
+			if (requestLine.isNew) {
+				let newRequestLine = await requestLineAPI.post(requestLine);
+				navigate(`/requests/detail/${newRequestLine.requestId}`);
 			} else {
-				await requestLineAPI.put(requestLines);
+				await requestLineAPI.put(requestLine);
+				// navigate(`/requests/detail/${requestLine.requestId}`);
 			}
-			navigate("/requestLines");
 		} catch (error: any) {
 			toast.error(error.message);
 		}
@@ -72,6 +75,7 @@ function RequestLineForm() {
 						id="product"
 						{...register("productId", {
 							required: "Product is required",
+							valueAsNumber: true,
 						})}
 						className={`form-select ${
 							errors.productId && "is-invalid"
@@ -99,9 +103,9 @@ function RequestLineForm() {
 						</label>
 						<input
 							id="quantity"
-							defaultValue={0}
 							{...register("quantity", {
 								required: "Quantity is required",
+								valueAsNumber: true,
 							})}
 							className={`form-control ${
 								errors.quantity && "is-invalid"
@@ -113,18 +117,22 @@ function RequestLineForm() {
 							{errors?.quantity?.message}
 						</div>
 
-						<label htmlFor="amount" className="mt-5">Amount</label>
+						<label
+							htmlFor="amount"
+							className="mt-5">
+							Amount
+						</label>
 						{/* <div>
-							$
-							{(requestLine?.product?.price ?? 0) *
-								(requestLine?.quantity ?? 0)}
+
+							$ {	(requestLine?.product?.price ?? 0) *
+								(request.requestLine?.quantity ?? 0)}
 						</div> */}
 					</div>
-				
-
 
 					<div className="d-flex gap-2 justify-content-end">
-						<button className="btn btn-outline-primary">
+						<Link
+							to={`/requests/detail/${requestId}`}
+							className="btn btn-outline-primary">
 							<svg
 								className="bi me-2"
 								width={15}
@@ -133,7 +141,7 @@ function RequestLineForm() {
 								<use xlinkHref={`${bootstrapIcons}#x-circle`} />
 							</svg>
 							Cancel
-						</button>
+						</Link>
 						<button className="btn btn-primary">
 							<svg
 								className="bi me-2"

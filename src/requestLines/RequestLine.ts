@@ -2,13 +2,13 @@ import { Product } from "../products/Products";
 import { Request } from "../requests/Request";
 
 export class RequestLine {
-	id: number | undefined = undefined;
-	requestId = "";
+	id: number | undefined;
+	requestId :number | undefined;
 	quantity = 0;
-	productId = "";
+	productId : number | undefined;
 	
 	product: Product | undefined;
-	request: Request | undefined
+	request: Request | undefined;
     filter: any;
 
 	get isNew(): boolean {
@@ -20,9 +20,9 @@ export class RequestLine {
 		if (initializer.id) this.id = initializer.id;
 		if (initializer.quantity)
 			this.quantity = initializer.quantity;
-		if (initializer.product.productId)
+		if (initializer.productId)
 			this.productId = initializer.productId;
-		if (initializer.request.requestId)
+		if (initializer.requestId)
 			this.requestId = initializer.requestId;
 				
 		
