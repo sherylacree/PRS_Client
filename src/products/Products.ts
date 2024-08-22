@@ -4,11 +4,11 @@ export class Product {
 	id: number | undefined = undefined;
 	partNbr = "";
 	name = "";
-	price = "";
+	price = 0;
 	unit = "";
 	vendorId: number | undefined;
 	vendor: Vendor | undefined;
-	static price: ReactNode;
+	
 
 	get isNew(): boolean {
 		return this.id === undefined;

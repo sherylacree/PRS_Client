@@ -26,7 +26,7 @@ import RequestList from "./requests/RequestList";
 import RequestsCreate from "./requests/RequestCreate";
 import RequestsEdit from "./requests/RequestEdit";
 import RequestDetailPage from "./requests/RequestDetailPage";
-import RequestLineEdit from "./requestLines/RequestLineEdit";
+import RequestLineEdit from "./requestLines/RequestLineEdit"
 import RequestLineCreate from "./requestLines/RequestLineCreate";
 import { Toaster } from "react-hot-toast";
 

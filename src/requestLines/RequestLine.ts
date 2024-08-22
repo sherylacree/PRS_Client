@@ -6,7 +6,7 @@ export class RequestLine {
 	requestId = "";
 	quantity = 0;
 	productId = "";
-	price= 0;
+	
 	product: Product | undefined;
 	request: Request | undefined
     filter: any;
@@ -25,8 +25,7 @@ export class RequestLine {
 		if (initializer.request.requestId)
 			this.requestId = initializer.requestId;
 				
-		if (initializer.product.price)
-			this.price = initializer.price;
+		
 		
 	}
 }

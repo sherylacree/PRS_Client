@@ -8,7 +8,8 @@ import { requestAPI } from "./RequestAPI";
 import toast from "react-hot-toast";
 
 import { Request } from "./Request";
-import RequestLineForm from "../requestLines/RequestLineForm";
+
+import RequestLineTable from "../requestLines/RequestLineTable";
 
 
 function RequestDetailPage() {
@@ -112,7 +113,7 @@ function RequestDetailPage() {
 								
                                 <div className="align-items-start mt-0">
 									
-									<RequestLineForm/>
+									<RequestLineTable requestLines={request.requestLines}/>
 								</div>            
                                 
                             

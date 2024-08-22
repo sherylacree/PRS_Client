@@ -1,4 +1,5 @@
 import { Product } from "../products/Products";
+import { RequestLine } from "../requestLines/RequestLine";
 import { User } from "../users/User";
 
 export class Request {
@@ -12,6 +13,7 @@ export class Request {
 	userId: number | undefined;
 	user: User | undefined;
 	product: Product | undefined;
+	requestLines: RequestLine[] |undefined;
     filter: any;
 
 	get isNew(): boolean {
@@ -39,5 +41,7 @@ export class Request {
 		if (initializer.userId)
 			this.userId = initializer.userId;
 		if (initializer.user) this.user = initializer.user;
+		if (initializer.requestLines)
+			this.requestLines = initializer.requestLines;
 	}
 }
