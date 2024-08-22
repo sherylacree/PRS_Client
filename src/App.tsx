@@ -26,6 +26,8 @@ import RequestList from "./requests/RequestList";
 import RequestsCreate from "./requests/RequestCreate";
 import RequestsEdit from "./requests/RequestEdit";
 import RequestDetailPage from "./requests/RequestDetailPage";
+import RequestLineEdit from "./requestLines/RequestLineEdit";
+import RequestLineCreate from "./requestLines/RequestLineCreate";
 
 function App() {
 	return (
@@ -109,12 +111,7 @@ function App() {
 										<RequestsPage />
 									}
 								/>
-								<Route
-									path="/requests"
-									element={
-										<RequestList />
-									}
-								/>
+
 								<Route
 									path="/requests/create"
 									element={
@@ -137,6 +134,19 @@ function App() {
 									path="/requests/list/:requestId"
 									element={
 										<RequestList />
+									}
+								/>
+
+								<Route
+									path="/requestLine/create"
+									element={
+										<RequestLineCreate />
+									}
+								/>
+								<Route
+									path="/requestLine/edit/:id"
+									element={
+										<RequestLineEdit />
 									}
 								/>
 							</Routes>

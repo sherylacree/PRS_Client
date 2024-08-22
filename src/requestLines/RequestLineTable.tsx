@@ -1,19 +1,21 @@
-import { Request } from "./Request";
 import { useEffect, useState } from "react";
 import "../App";
-import { requestAPI } from "./RequestAPI";
 import toast from "react-hot-toast";
-import RequestTableRow from "./RequestTableRow";
+import { RequestLine } from "./RequestLine";
+import RequestLineTableRow from "./RequestLineTableRow";
+import { requestLineAPI } from "./RequestLIneAPI";
 
-function RequestTable() {
-	const [requests, setRequests] = useState<Request[]>([]);
+
+
+function RequestLineTable() {
+	const [requestLine, setRequestLine] = useState<RequestLine[]>([]);
 	const [busy, setBusy] = useState(false);
 
-	async function loadRequests() {
+	async function loadRequestLines() {
 		try {
 			setBusy(true);
-			const data = await requestAPI.list();
-			setRequests(data);
+			const data = await requestLineAPI.list();
+			setRequestLine(data);
 		} catch (error: any) {
 			toast.error(error.message);
 		} finally {
@@ -22,21 +24,22 @@ function RequestTable() {
 	}
 
 	useEffect(() => {
-		loadRequests();
+		loadRequestLines();
 	}, []);
 
-	async function remove(request: Request) {
+	async function remove(requestLine: RequestLine) {
 		if (
 			confirm(
-				"Are you sure you want to delete this Request?"
+				"Are you sure you want to delete this Item?"
 			)
 		) {
-			if (request.id) {
-				await requestAPI.delete(request.id);
-				let updatedRequests = requests.filter(
-					(m) => m.id !== request.id
-				);
-				setRequests(updatedRequests);
+			if (requestLine.id) {
+				await requestLineAPI.delete(requestLine.id);
+				let updatedRequestLine =
+					requestLine.filter(
+						(l: { id: any; }) => l.id !== requestLine.id
+					);
+				setRequestLine(updatedRequestLine);
 				toast.success("Successfully deleted.");
 			}
 		}
@@ -58,7 +61,6 @@ function RequestTable() {
 			<table className="table table-hover w-75">
 				<thead>
 					<tr>
-						
 						<th>Product</th>
 						<th>Price</th>
 						<th>Quantity</th>
@@ -67,10 +69,10 @@ function RequestTable() {
 					</tr>
 				</thead>
 				<tbody>
-					{requests.map((request) => (
-						<RequestTableRow
-							key={request.id}
-							request={request}
+					{requestLine.map((requestLine) => (
+						<RequestLineTableRow
+							key={requestLine.id}
+							requestLine={requestLine}
 							onRemove={remove}
 						/>
 					))}
@@ -80,4 +82,4 @@ function RequestTable() {
 	);
 }
 
-export default RequestTable;
+export default RequestLineTable;

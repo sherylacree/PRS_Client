@@ -226,7 +226,7 @@ function RequestForm() {
 										key={user.id}
 										value={user.id}>
 										{user?.firstname}
-										{""}{" "}
+										{" "}
 										{user?.lastname}
 									</option>
 								))}
