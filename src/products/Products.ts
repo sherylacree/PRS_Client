@@ -8,6 +8,7 @@ export class Product {
 	unit = "";
 	vendorId: number | undefined;
 	vendor: Vendor | undefined;
+	static price: ReactNode;
 
 	get isNew(): boolean {
 		return this.id === undefined;

@@ -18,6 +18,7 @@ function RequestForm() {
 	const { id } = useParams<{ id: string }>();
 	const requestId = Number(id);
 	const [users, setUsers] = useState<User[]>([]);
+	
 
 	const {
 		register,
@@ -42,17 +43,22 @@ function RequestForm() {
 		request
 	) => {
 		try {
-			if (request.isNew) { 
-				let newRequest =  await requestAPI.post(request);
-				navigate(`/requests/detail/${newRequest.id}`);
+			if (request.isNew) {
+				let newRequest = await requestAPI.post(
+					request
+				);
+				navigate(
+					`/requests/detail/${newRequest.id}`
+				);
 			} else {
 				await requestAPI.put(request);
 				navigate(`/requests/detail/${request.id}`);
-			} 
-			
+			}
 		} catch (error: any) {
 			toast.error(error.message);
 		}
+		
+
 	};
 
 	return (
@@ -160,23 +166,40 @@ function RequestForm() {
 								htmlFor="status">
 								Status
 							</label>
-							<input
-								id="status"
+
+							
+							{/* function RequestForm({isEditMode=false, register, errors}) {
+								return( */}
+							
+							<select
 								{...register("status", {
 									required:
-										"Unit is required",
+										"Set Status is Required",
 								})}
-								className={`form-control ${
+								className={`form-select ${
 									errors.status &&
 									"is-invalid"
 								} `}
-								type="text"
-								placeholder="status"
-								autoFocus
-							/>
-							<div className="invalid-feedback">
-								{errors?.status?.message}
-							</div>
+								id="status" 
+								defaultValue="New" disabled>
+								<option value="">
+									Select...
+								</option>
+								<option value="NEW">
+									New
+								</option>
+								<option value="REVIEW">
+									Review
+								</option>
+								<option value="APPROVED	">
+									Approved
+								</option>
+								<option value="REJECTED">
+									Rejected
+								</option>
+							</select>
+								
+							
 						</div>
 
 						<div className="ms-5 w-50">
@@ -231,9 +254,7 @@ function RequestForm() {
 					</svg>
 					Cancel
 				</Link>
-				<button
-					className="btn btn-primary">
-					
+				<button className="btn btn-primary">
 					<svg
 						className="bi me-2"
 						width={15}

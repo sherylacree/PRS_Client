@@ -107,19 +107,26 @@ function RequestDetailPage() {
 						</section>
 
 						<section className="card p-4 mt-4 w-100">
-							<header className="d-flex justify-content-between">
+							<header className="justify-content-start">
 								<h5>Items</h5>
+
 								<hr />
+                                <div className="align-items-start">add table here</div>            
+                                
+                            
+
+                                <hr />
 
 								<Link
-									className="btn btn-outline-primary"
+									className="btn btn-outline-primary justify-content-start p-2"
 									to={`/requests/detail/${request.id}/product/create`}>
-									+ add product
+									+ add line
 								</Link>
 							</header>
 
 							
 						</section>
+
 					</>
 				)}
 			</>
