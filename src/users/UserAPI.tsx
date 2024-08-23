@@ -8,6 +8,7 @@ import { User } from "./User";
 
 let url = `${BASE_URL}/users`;
 
+
 export const userAPI = {
 	list(): Promise<User[]> {
 		return fetch(`${url}?_sort=name&_order=asc`)
@@ -50,4 +51,17 @@ export const userAPI = {
 			method: "DELETE",
 		}).then(checkStatus);
 	},
+
+		findAccount(username: string, password: string): Promise<User> {
+		  return (
+			fetch(`${url}/${username}/${password}`)
+			  .then(checkStatus)
+			  .then(parseJSON)
+			  //delete the next three lineswhen using PRS API because it will only return one user not an array with one user
+			
+		  );
+		},
+	
+
+
 };

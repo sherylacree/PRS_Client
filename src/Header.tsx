@@ -1,6 +1,18 @@
-import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "./users/UserContext";
 
 function Header(){
+const {user, setUser}= useUserContext();
+const navigate = useNavigate();
+
+function signOut(){
+localStorage.removeItem("user");
+	setUser(undefined);
+	navigate("/signin")
+}
+
+
+
     return(
 	<header className="container-fluid justify-content-between d-flex bg-light pe-4 ps-4 pt-1 fw-bolder">
 				<span>
@@ -24,9 +36,50 @@ function Header(){
 					</svg>
 					Purchase Request System
 				</span>
-				<a
+
+				<details className="dropdown pe-5">
+        <summary className="btn btn-tertiary dropdown-toggle d-flex align-items-center">
+          <span
+            style={{ width: "3rem", height: "3rem" }}
+            className="d-flex  bg-primary-subtle fs-5 text-secondary align-items-center justify-content-center rounded-circle me-2"
+          >
+             {user?.firstname?.substring(0, 1)}
+             {user?.lastname?.substring(0, 1)}
+          </span>
+          {user?.firstname} {user?.lastname}
+        </summary>
+        <div className="d-flex justify-content-end">
+          <ul
+            className="dropdown-menu bg-body-tertiary"
+            style={{ display: "revert" }}
+          >
+            <li>
+              <a className="dropdown-item" href="#">
+                Profile
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Settings
+              </a>
+            </li>
+            <li>
+              <button className="dropdown-item" onClick={signOut}>
+                Sign out
+              </button>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </header>
+  );
+}
+
+export default Header
+
+				{/* <Link
 					className="btn btn-primary py-1 px-4 my-3"
-					href="signin.html">
+					to="/signin">
 					<svg
 						className="bi"
 						width={25}
@@ -37,8 +90,8 @@ function Header(){
 						/>
 					</svg>
 					Sign In
-				</a>
+				</Link>
 			</header>
     )
 }
-export default Header;
+export default Header; */}
