@@ -37,6 +37,7 @@ function VendorForm() {
 			} else {
 				await vendorAPI.put(vendor);
 			}
+			toast.success("Successfully saved");
 			navigate("/vendors");
 		} catch (error: any) {
 			toast.error(error.message);

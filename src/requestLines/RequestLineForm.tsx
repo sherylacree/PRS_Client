@@ -51,6 +51,7 @@ function RequestLineForm() {
 				await requestLineAPI.put(requestLine);
 				navigate(`/requests/detail/${requestLine.requestId}`);
 			}
+			toast.success("Successfully saved");
 		} catch (error: any) {
 			toast.error(error.message);
 		}
@@ -63,7 +64,7 @@ function RequestLineForm() {
 			noValidate>
 			<div className="p-2 mt-0 w-100 justify-content-start">
 				<h4 className="p-4  justify-content-start">
-					<strong>Items</strong>
+					<strong>Item</strong>
 				</h4>
 				<div className="p-2 m-2 w-100">
 					<label
@@ -117,11 +118,11 @@ function RequestLineForm() {
 							{errors?.quantity?.message}
 						</div>
 
-						<label
+						{/* <label
 							htmlFor="amount"
 							className="mt-5">
 							Amount
-						</label>
+						</label> */}
 						{/* <div>
 
 							$ {	(requestLine?.product?.price ?? 0) *

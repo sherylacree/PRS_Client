@@ -41,6 +41,7 @@ function RequestForm() {
 				await requestAPI.put(request);
 				navigate(`/requests/detail/${request.id}`);
 			}
+			toast.success("Successfully saved");
 		} catch (error: any) {
 			toast.error(error.message);
 		}

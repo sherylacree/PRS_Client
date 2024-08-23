@@ -38,6 +38,7 @@ function UserForm() {
 				await userAPI.put(user);
 			}
 			navigate("/users");
+			toast.success("Successfully saved");
 		} catch (error: any) {
 			toast.error(error.message);
 		}

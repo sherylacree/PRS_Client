@@ -46,6 +46,7 @@ function ProductForm() {
 				await productAPI.put(product);
 			}
 			navigate("/products");
+			toast.success("Successfully saved");
 		} catch (error: any) {
 			toast.error(error.message);
 		}
