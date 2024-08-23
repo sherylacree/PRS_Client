@@ -1,14 +1,15 @@
 import "../App";
 import { RequestLine } from "./RequestLine";
 import RequestLineTableRow from "./RequestLineTableRow";
+import { Request } from "../requests/Request";
 
 interface RequestLineTableProps {
-	requestLines: RequestLine[] | undefined;
+	request: Request;
+	onRemove: (requestline: RequestLine) => void;
 }
 
-function RequestLineTable(props: RequestLineTableProps) {
-	async function remove(requestline: RequestLine) {
-			// if (
+function RequestLineTable ({request, onRemove}:RequestLineTableProps){
+	
 			// 	confirm(
 			// 		"Are you sure you want to delete this Item?"
 			// 	)
@@ -23,7 +24,7 @@ function RequestLineTable(props: RequestLineTableProps) {
 			// 		toast.success("Successfully deleted.");
 			// 	}
 			// }
-	}
+	
 
 	return (
 		<>
@@ -38,11 +39,11 @@ function RequestLineTable(props: RequestLineTableProps) {
 					</tr>
 				</thead>
 				<tbody >
-					{props.requestLines?.map((requestLine) => (
+					{request.requestLines?.map((requestline) => (
 						<RequestLineTableRow
-							key={requestLine.id}
-							requestLine={requestLine}
-							onRemove={remove}
+							key={requestline.id}
+							requestLine={requestline}
+							remove={onRemove}
 						/>
 					))}
 				</tbody>

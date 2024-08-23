@@ -9,7 +9,7 @@ import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 import { RequestLine } from "./RequestLine";
 
 import { productAPI } from "../products/ProductAPI";
-import { requestLineAPI } from "./RequestLIneAPI";
+import { requestLineAPI } from "./RequestLineAPI";
 
 function RequestLineForm() {
 	const navigate = useNavigate();

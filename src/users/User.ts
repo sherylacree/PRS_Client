@@ -1,14 +1,14 @@
 
 export class User {
-	id: number | undefined = undefined; 
+	id: number | undefined ; 
 	username = "";
 	password = "";
 	firstname = "";
 	lastname = "";
 	phone = "";
 	email = "";
-	isAdmin = "";
-	isReviewer = "";
+	isAdmin = false;
+	isReviewer = false;
 
 	get isNew(): boolean {
 		return this.id === undefined;
@@ -23,8 +23,7 @@ export class User {
 		if (initializer.firstname)
 			this.firstname = initializer.firstname;
 		if (initializer.lastname) this.lastname = initializer.lastname;
-		if (initializer.lastname)
-			this.lastname = initializer.lastname;
+		
 		if (initializer.phone)
 			this.phone = initializer.phone;
 		if (initializer.email)

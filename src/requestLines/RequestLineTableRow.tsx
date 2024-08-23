@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 import { RequestLine } from "./RequestLine";
-import { SyntheticEvent } from "react";
-import { Request } from "../requests/Request";
+
 
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 
 interface RequestLineTableRowProps {
 	requestLine: RequestLine;
-	onRemove: (requestLine: RequestLine) => void;
+	remove: (requestLine: RequestLine) => void;
 }
 
 function RequestLineTableRow({
 	requestLine,
-	onRemove,
+	remove,
 }: RequestLineTableRowProps) {
 	return (
 		<tr>
@@ -42,12 +41,9 @@ function RequestLineTableRow({
 							<use xlinkHref={`${bootstrapIcons}#pencil`} />
 						</svg>
 					</Link>
-				
-					<Link to={`requestLine/edit/${requestLine.id}`}>		
-					<a  className="" onClick={(event: SyntheticEvent) => {
-								event.preventDefault();
-								onRemove(requestLine);
-							}}>
+
+					<a  onClick={() => remove(requestLine)} >
+
 						<svg
 							className="bi me-2"
 							width={15}
@@ -56,7 +52,10 @@ function RequestLineTableRow({
 							<use xlinkHref={`${bootstrapIcons}#trash3`} />
 						</svg>
 					</a>
-					</Link>		
+
+
+
+					
 				</div>
 			</td>
 		</tr>

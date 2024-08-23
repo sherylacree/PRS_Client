@@ -5,7 +5,8 @@ import toast from "react-hot-toast";
 import { Request } from "./Request";
 import { RequestLine } from "../requestLines/RequestLine";
 import RequestLineTable from "../requestLines/RequestLineTable";
-import { requestLineAPI } from "../requestLines/RequestLIneAPI";
+import { requestLineAPI } from "../requestLines/RequestLineAPI";
+
 
 
 function RequestDetailPage() {
@@ -43,7 +44,7 @@ function RequestDetailPage() {
 			toast.success("Successfully deleted.");
 			let updatedRequestLine = request?.requestLines?.filter((l) => l.id !== requestLine.id);
 			if (request) {
-			  setRequest({ ...request, requestLine: updatedRequestLine } as Request);
+			  setRequest({ ...request, requestLines: updatedRequestLine } as Request);
 			}
 		  }
 		}
@@ -123,7 +124,7 @@ function RequestDetailPage() {
 								
                                 <div className="align-items-start mt-0">
 									
-									<RequestLineTable requestLines={request.requestLines}/>
+									<RequestLineTable request={request} onRemove={removeRequestLine}/>
 								</div>            
                                 
                             

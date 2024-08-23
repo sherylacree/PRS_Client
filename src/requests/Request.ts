@@ -3,7 +3,7 @@ import { RequestLine } from "../requestLines/RequestLine";
 import { User } from "../users/User";
 
 export class Request {
-	id: number | undefined = undefined;
+	id: number | undefined ;
 	description = "";
 	justification = "";
 	rejectionReason = "";
@@ -13,7 +13,7 @@ export class Request {
 	userId: number | undefined;
 	user: User | undefined;
 	product: Product | undefined;
-	requestLines: RequestLine[] |undefined;
+	requestLines: RequestLine[] | undefined;
     filter: any;
 
 	get isNew(): boolean {
