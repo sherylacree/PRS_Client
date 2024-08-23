@@ -9,6 +9,7 @@ export class RequestLine {
 
 	product: Product | undefined;
 	request: Request | undefined;
+	total:number | undefined;
 	// filter: any;
 
 	get isNew(): boolean {

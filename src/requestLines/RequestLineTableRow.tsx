@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { RequestLine } from "./RequestLine";
 
 
+
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 
 interface RequestLineTableRowProps {
@@ -52,14 +53,22 @@ function RequestLineTableRow({
 							<use xlinkHref={`${bootstrapIcons}#trash3`} />
 						</svg>
 					</a>
-
-
-
 					
 				</div>
 			</td>
 		</tr>
+
 	);
 }
+{/* <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td> ${request.total}</td>
+              <td></td>
+            </tr>
+          </tfoot> */}
+		  
 
 export default RequestLineTableRow;
