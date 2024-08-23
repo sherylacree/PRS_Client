@@ -4,10 +4,10 @@ import RequestLineForm from "./RequestLineForm";
 function RequestLineEdit() {
 	return (
 		<>
-		<div className="d-flex justify-content-between p-4">
+		<div className="d-flex justify-content-between">
 			<h3> Edit  Item </h3>
-			<div>
-				<button className="btn btn-primary">Approve</button>
+			<div className="">
+				<button className="btn btn-primary me-2">Approve</button>
 				<button className="btn btn-outline-danger">Reject</button>
 				
 			</div>

@@ -53,6 +53,8 @@ function VendorForm() {
 	};
 
 	return (
+		
+		<div className="bg-light">
 		<form
 			className="w-75"
 			onSubmit={handleSubmit(save)}
@@ -374,19 +376,13 @@ function VendorForm() {
 					</label>
 					<input
 						id="phone"
-						{...register("phone", {
-							required:
-								"Pleae provide phone number",
-						})}
-						className={`form-control ${
-							errors.phone && "is-invalid"
-						} `}
+						{...register("phone")}
+							
+						className="form-control"							
 						type="text"
 						placeholder="Enter vendor's phone number"
 					/>
-					<div className="invalid-feedback">
-						{errors?.phone?.message}
-					</div>
+					
 				</div>
 				<div className="mb-3 ms-2 w-50">
 					<label
@@ -396,19 +392,14 @@ function VendorForm() {
 					</label>
 					<input
 						id="email"
-						{...register("email", {
-							required:
-								"Please provide an email address",
-						})}
-						className={`form-control ${
-							errors.email && "is-invalid"
-						} `}
+						{...register("email")}
+							
+						className="form-control"
+					
 						type="text"
 						placeholder="Enter vendor's email"
 					/>
-					<div className="invalid-feedback">
-						{errors?.email?.message}
-					</div>
+				
 				</div>
 			</div>
 			<div className="d-flex gap-2 justify-content-end">
@@ -443,6 +434,7 @@ function VendorForm() {
 				</button>
 			</div>
 		</form>
+		</div>
 	);
 }
 

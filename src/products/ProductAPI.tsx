@@ -17,11 +17,16 @@ export const productAPI = {
 			.then(parseJSON);
 	},
 
+
+	
 	find(id: number): Promise<Product> {
 		return fetch(`${url}/${id}`)
 			.then(checkStatus)
 			.then(parseJSON);
 	},
+
+
+	
 
 	post(product: Product) {
 		return fetch(`${url}`, {

@@ -43,7 +43,7 @@ function RequestLineTableRow({
 						</svg>
 					</Link>
 				
-									
+					<Link to={`requestLine/edit/${requestLine.id}`}>		
 					<a  className="" onClick={(event: SyntheticEvent) => {
 								event.preventDefault();
 								onRemove(requestLine);
@@ -56,6 +56,7 @@ function RequestLineTableRow({
 							<use xlinkHref={`${bootstrapIcons}#trash3`} />
 						</svg>
 					</a>
+					</Link>		
 				</div>
 			</td>
 		</tr>

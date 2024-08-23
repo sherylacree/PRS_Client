@@ -147,18 +147,11 @@ function UserForm() {
 				</label>
 				<input
 					id="phone"
-					{...register("phone", {
-						required:
-							"Pleae provide phone number",
-					})}
-					className={`form-control ${
-						errors.phone && "is-invalid"
-					} `}
+					{...register("phone")}					
+					className="form-control"				
 					type="text"
 				/>
-				<div className="invalid-feedback">
-					{errors?.phone?.message}
-				</div>
+				
 			</div>
 
 			<div className="mb-3 mx-2 w-50">
@@ -169,17 +162,11 @@ function UserForm() {
 				</label>
 				<input
 					id="email"
-					{...register("email", {
-						required: "Please provide an email",
-					})}
-					className={`form-control ${
-						errors.email && "is-invalid"
-					} `}
+					{...register("email")}
+					className="form-control"
 					type="text"
 				/>
-				<div className="invalid-feedback">
-					{errors?.email?.message}
-				</div>
+				
 			</div>
 				</div>
 <div className="mx-3">Role</div>

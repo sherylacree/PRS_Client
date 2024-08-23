@@ -53,6 +53,7 @@ function ProductForm() {
 	};
 
 	return (
+		<div className="bg-light ">
 		<form
 			className="w-75"
 			onSubmit={handleSubmit(save)}
@@ -226,6 +227,7 @@ function ProductForm() {
 			</div>
 			
 		</form>
+		</div>
 	);
 }
 

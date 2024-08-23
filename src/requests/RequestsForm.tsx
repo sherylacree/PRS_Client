@@ -48,13 +48,15 @@ function RequestForm() {
 	};
 
 	return (
+		
+		<div className="bg-light">
 		<form
 			className="w-100"
 			onSubmit={handleSubmit(save)}
 			noValidate>
 			<div className="w-100 d-flex">
 				<div className="w-50">
-					<div className="w-100 mb-4">
+					<div className="w-100 mb-4 mt-2">
 						<label
 							className="form-label"
 							htmlFor="description">
@@ -100,7 +102,7 @@ function RequestForm() {
 						</div>
 					</div>
 				</div>
-				<div className="w-75 d-flex ms-5 align-content-end">
+				<div className="w-75 d-flex ms-5 align-content-end mt-2">
 					<div className="w-100">
 						<div className="mb-4 ms-5 w-50">
 							<label
@@ -212,6 +214,7 @@ function RequestForm() {
 				</button>
 			</div>
 		</form>
+		</div>
 	);
 }
 

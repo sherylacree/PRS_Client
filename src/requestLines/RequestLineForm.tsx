@@ -58,12 +58,13 @@ function RequestLineForm() {
 	};
 
 	return (
+		<div className="bg-light"> 
 		<form
-			className="w-100  ms-0 card"
+			className="w-50  card ms-4 "
 			onSubmit={handleSubmit(save)}
 			noValidate>
-			<div className="p-2 mt-0 w-100 justify-content-start">
-				<h4 className="p-4  justify-content-start">
+			<div className="p-2 w-100 ">
+				<h4 className="p-4 ">
 					<strong>Item</strong>
 				</h4>
 				<div className="p-2 m-2 w-100">
@@ -159,6 +160,7 @@ function RequestLineForm() {
 				</div>
 			</div>
 		</form>
+		</div>
 	);
 }
 
