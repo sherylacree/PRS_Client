@@ -27,6 +27,7 @@ function RequestCard({
 				Requested By: {request.user?.firstname}{" "}
 				{request.user?.lastname}
 			</small>
+			
 			<small>Total: ${request.total}</small>
 			<div className="d-flex gap-2">
 				<Link

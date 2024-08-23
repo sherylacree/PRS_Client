@@ -28,9 +28,11 @@ function RequestLineTable ({request, onRemove}:RequestLineTableProps){
 
 	return (
 		<>
+		
 			<table className="table table-hover w-75">
 				<thead>
-					<tr>
+					<h3>Items</h3>
+					<tr >
 						<th>Product</th>
 						<th>Price</th>
 						<th>Quantity</th>
@@ -46,6 +48,16 @@ function RequestLineTable ({request, onRemove}:RequestLineTableProps){
 							remove={onRemove}
 						/>
 					))}
+
+<tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <strong>Total:</strong> ${request.total}
+          </td>
+          <td></td>
+        </tr>
 				</tbody>
 			</table>
 		</>

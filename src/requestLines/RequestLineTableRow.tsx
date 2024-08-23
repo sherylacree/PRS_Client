@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import { RequestLine } from "./RequestLine";
-
-
-
 import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 
 interface RequestLineTableRowProps {
@@ -15,7 +12,8 @@ function RequestLineTableRow({
 	remove,
 }: RequestLineTableRowProps) {
 	return (
-		<tr>
+	
+		<tr className="">
 			<td>{requestLine.product?.name}</td>
 			<td>${requestLine.product?.price}</td>
 			<td> {requestLine.quantity}</td>
@@ -57,6 +55,7 @@ function RequestLineTableRow({
 				</div>
 			</td>
 		</tr>
+		
 
 	);
 }

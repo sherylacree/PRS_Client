@@ -7,10 +7,25 @@ interface RequestTableRowProps {
 	onRemove: (request: Request) => void;
 }
 
-function RequestTableRow({
-	request,
-	onRemove,
-}: RequestTableRowProps) {
+
+export default function RequestTableRow({request ,onRemove,}:RequestTableRowProps) {
+
+	
+
+		function badgeType(request: Request) {
+		  let badgeInfo;
+		  if (request.status === "NEW") {
+			badgeInfo = "text-bg-primary";
+		  } else if (request.status === "APPROVED") {
+			badgeInfo = "text-bg-success";
+		  } else if (request.status === "REJECTED") {
+			badgeInfo = "text-bg-danger";
+		  } else if (request.status === "REVIEW") {
+			badgeInfo = "text-bg-warning";
+		  }
+		  return badgeInfo;
+		}
+
 	return (
 		<tr>
             <td> {request.id}</td>
@@ -21,10 +36,8 @@ function RequestTableRow({
 				<small>{request.justification}</small>
 			</td>
 			<td>
-				<span className="badge text-bg-secondary rounded-pill ">
-					{request.status}
-				</span>
-			</td>
+          <span className={`badge ${badgeType(request)}`}>{request.status}</span>
+        </td>
 			<td> $ {request.total}</td>
 			<td>
 				{request?.user?.firstname}{" "}
@@ -49,7 +62,7 @@ function RequestTableRow({
 
 					<Link
 						className="small"
-						to={"/requests/"}
+						to={"/requests"}
 						onClick={(
 							event: SyntheticEvent
 						) => {
@@ -78,4 +91,4 @@ function RequestTableRow({
 	);
 }
 
-export default RequestTableRow;
+
