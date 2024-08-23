@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "./users/UserContext";
-
+import bootstrapIcons from "bootstrap-icons/bootstrap-icons.svg";
 function Header(){
 const {user, setUser}= useUserContext();
 const navigate = useNavigate();
@@ -37,6 +37,7 @@ localStorage.removeItem("user");
 					Purchase Request System
 				</span>
 
+{ user?.id ?
 				<details className="dropdown pe-5">
         <summary className="btn btn-tertiary dropdown-toggle d-flex align-items-center">
           <span
@@ -71,6 +72,21 @@ localStorage.removeItem("user");
           </ul>
         </div>
       </details>
+	 : <Link
+	 className="btn btn-primary"
+	 to="/signin">
+	 <svg
+		 className="bi me-2"
+		 width={25}
+		 height={25}
+		 fill="currentColor">
+		 <use
+			 xlinkHref={`${bootstrapIcons}#person`}
+		 />
+	 </svg>
+	 Sign in
+ </Link> }
+
     </header>
   );
 }

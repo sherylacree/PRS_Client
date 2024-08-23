@@ -1,7 +1,7 @@
 import { Vendor } from "../vendors/Vendor";
 
 export class Product {
-	id: number | undefined = undefined;
+	id: number | undefined ;
 	partNbr = "";
 	name = "";
 	price = 0;
