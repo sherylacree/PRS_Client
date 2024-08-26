@@ -14,7 +14,7 @@ localStorage.removeItem("user");
 
 
     return(
-	<header className="container-fluid justify-content-between d-flex bg-light pe-4 ps-4 pt-1 fw-bolder">
+	<header className="container-fluid justify-content-between d-flex bg-light pe-4 ps-4 pt-1 fw-bolder vh-25">
 				<span>
 					<svg
 						id="logo-35"

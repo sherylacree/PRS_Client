@@ -37,7 +37,7 @@ function NavPanel() {
 								xlinkHref={`${bootstrapIcons}#cart`}
 							/>
 						</svg>
-						Request
+						Requests
 					</NavLink>
 				</li>
 				<li className="nav-item pt-4">

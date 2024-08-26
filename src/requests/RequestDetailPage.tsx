@@ -107,29 +107,29 @@ function RequestDetailPage() {
 
 				<div className="d-flex gap-2">
 					{request.status !== "REVIEW" && (
-						<Link
+						<button
 							onClick={sendToReview}
-							to="/requests"
+							
 							className="btn btn-primary me-2">
 							Send for review
-						</Link>
+						</button>
 					)}
 					{request.status !== "APPROVE" && (
-						<Link
-							to="/requests"
+						<button
+							
 							onClick={approveRequest}
 							className="btn btn-outline-primary me-2">
 						Approve
-						</Link>
+						</button>
 					)}
 
 					{request.status !== "REJECT" && (
-						<Link
-							to="/requests"
+						<button
+							
 							onClick={rejectRequest}
 							className="btn btn-outline-danger">
 							Reject
-						</Link>
+						</button>
 					)}
 
 					<Link
