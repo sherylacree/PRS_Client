@@ -7,8 +7,8 @@ export class Request {
 	description = "";
 	justification = "";
 	rejectionReason = "";
-	deliveryMode = "";
-	status = "New";
+	deliveryMode = "Pickup";
+	status = "NEW";
 	total : number | undefined;
 	userId: number | undefined;
 	user: User | undefined;

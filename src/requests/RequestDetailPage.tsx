@@ -116,15 +116,16 @@ function RequestDetailPage() {
 					)}
 					{request.status !== "APPROVE" && (
 						<Link
-						to="/requests"
+							to="/requests"
 							onClick={approveRequest}
 							className="btn btn-outline-primary me-2">
-							Approve
+						Approve
 						</Link>
 					)}
 
 					{request.status !== "REJECT" && (
-						<Link to="/requests"
+						<Link
+							to="/requests"
 							onClick={rejectRequest}
 							className="btn btn-outline-danger">
 							Reject
@@ -133,7 +134,7 @@ function RequestDetailPage() {
 
 					<Link
 						className="nav-link "
-						to="{`/requests/edit/${request.id}`}">
+						to={`/requests/edit/${request.id}`}>
 						<svg
 							className="bi me-2"
 							width={15}
@@ -143,12 +144,6 @@ function RequestDetailPage() {
 						</svg>
 					</Link>
 				</div>
-
-				{/* <Link
-					to={`/requests/edit/${request.id}`}
-					className="btn btn-outline-primary">
-					edit request
-				</Link> */}
 			</nav>
 			<hr />
 			<>
@@ -173,24 +168,31 @@ function RequestDetailPage() {
 							<dl>
 								<dt>Delivery Method</dt>
 								<dd>{request.deliveryMode}</dd>
-
 								<dt>Status</dt>
-								<dd>
-								<dd
-              className={`badge ${request.status === "NEW" && "text-bg-primary"} ${
-                request.status === "REJECTED" && "text-bg-danger"
-              } ${request.status === "APPROVED" && "text-bg-success"} ${
-                request.status === "REVIEW" && "text-bg-warning"
-              }`}
-            >
-              {request.status}
-            </dd>
+								{/* <dd> */}
+									<dd style={{color: "black"}}
+										className={`badge ${
+											request.status === "NEW" &&
+											"text-bg-primary"
+										} ${
+											request.status === "REJECTED" &&
+											"text-bg-danger"
+										} ${
+											request.status === "APPROVED" &&
+											"text-bg-success"
+										} ${
+											request.status === "REVIEW" &&
+											"text-bg-warning"
+										}`}>
+										{request.status}
+									</dd>
 
 									{/* <span className="badge text-bg-primary rounded-pill ">
 										{request.status}
 									</span> */}
-								</dd>
+								{/* </dd> */}
 							</dl>
+							<dd className=""> 
 							<dt>Requested By</dt>
 							<dd>
 								{request?.user?.firstname}{" "}
@@ -201,6 +203,7 @@ function RequestDetailPage() {
 								<dd> $ {request.total}</dd>
 								<dl />
 							</dl>
+							</dd>
 						</section>
 
 						<section className="p-4 mt-4 w-75">

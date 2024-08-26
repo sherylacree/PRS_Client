@@ -29,9 +29,9 @@ function RequestLineTable ({request, onRemove}:RequestLineTableProps){
 	return (
 		<>
 		
+					<h3>Items</h3>
 			<table className="table table-hover w-75">
 				<thead>
-					<h3>Items</h3>
 					<tr >
 						<th>Product</th>
 						<th>Price</th>
