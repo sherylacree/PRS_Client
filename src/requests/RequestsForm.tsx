@@ -153,8 +153,8 @@ function RequestForm() {
 								defaultValue="New"
 								>
 								<option value="">Select...</option>
-								<option value="New">New</option>
-								<option value="Review">Review</option>
+								<option value="NEW">New</option>
+								<option value="REVIEW">Review</option>
 								<option value="Approved">Approved</option>
 								<option value="Rejected">Rejected</option>
 							</select>

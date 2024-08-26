@@ -116,16 +116,7 @@ function RequestLineForm() {
 								{errors?.quantity?.message}
 							</div>
 
-							{/* <label
-							htmlFor="amount"
-							className="mt-5">
-							Amount
-						</label> */}
-							{/* <div>
-
-							$ {	(requestLine?.product?.price ?? 0) *
-								(request.requestLine?.quantity ?? 0)}
-						</div> */}
+						
 						</div>
 
 						<div className="d-flex gap-2 justify-content-end">
